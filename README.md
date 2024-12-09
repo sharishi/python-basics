@@ -1,7 +1,3 @@
-Sure! Here's a more polished and engaging README for your Python basics course at State University of Moldova:
-
----
-
 # Python Basics Lecture Course
 
 Welcome to the **Python Basics Lecture Course** at **State University of Moldova**! This course is designed to introduce students to the fundamentals of Python programming, providing them with a strong foundation to build upon for advanced computer science studies.
