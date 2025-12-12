@@ -1,30 +1,32 @@
-# Словари и кортежи в Python
+# Dicționare și tuple în Python
 
-### Словари (dict)
+### Dicționare (dict)
 
-**Словарь** в Python — это неупорядоченная, изменяемая коллекция, которая хранит данные в виде пар "ключ-значение". Каждый ключ в словаре уникален, и его значение может быть любого типа. Словарь может быть использован для быстрого поиска значений по ключам.
+**Dicționarul** în Python — este o colecție neordonată, modificabilă, care stochează date sub formă de perechi "cheie-valoare". Fiecare cheie din dicționar este unică, iar valoarea ei poate fi de orice tip. Dicționarul poate fi folosit pentru căutarea rapidă a valorilor după cheie.
 
-#### Основные характеристики:
-- **Неупорядоченные** (до Python 3.7, начиная с этой версии словари сохраняют порядок вставки).
-- **Изменяемые** (можно добавлять, изменять или удалять элементы).
-- **Ключи уникальны**: два одинаковых ключа в одном словаре быть не могут.
+#### Caracteristici principale:
 
-Словари оптимизированы для извлечения данных. Мы должны знать ключ для
-произведения доступа к значению\
-В Python словари определены в фигурных скобках {}, где каждый элемент является парой
-в форме - `key:valuе`
-### **Ключи словарей в Python**
+* **Neordonate** (până la Python 3.7; începând cu această versiune, dicționarele păstrează ordinea inserării).
+* **Modificabile** (poți adăuga, modifica sau șterge elemente).
+* **Cheile sunt unice**: două chei identice într-un dicționar nu pot exista.
 
-В Python ключами словаря могут быть только **неизменяемые (immutable)** типы данных. Это связано с тем, что ключи словаря должны быть хешируемыми, а изменяемые типы, такие как списки и множества, не могут быть использованы в качестве ключей, поскольку их хеш может изменяться.
+Dicționarele sunt optimizate pentru extragerea datelor. Trebuie să cunoaștem cheia pentru a accesa valoarea.
+În Python, dicționarele sunt definite între acolade {}, fiecare element fiind o pereche în forma - `key:value`.
 
-**Что можно использовать в качестве ключей:**
-1. **Числа** (int, float).
-2. **Строки** (str).
-3. **Кортежи** (tuple), если они содержат только неизменяемые элементы.
-4. **frozenset** — неизменяемая версия множества, которая может использоваться в качестве ключа.
-5. **Boolean типы** (True, False).
+### **Cheile dicționarelor în Python**
 
-**Пример использования `frozenset` в качестве ключа:**
+În Python, cheile unui dicționar pot fi doar tipuri de date **imutable**. Aceasta se datorează faptului că cheile dicționarului trebuie să fie hash-uibile, iar tipurile modificabile, cum ar fi listele și mulțimile, nu pot fi folosite ca chei deoarece hash-ul lor se poate schimba.
+
+**Ce poate fi folosit ca cheie:**
+
+1. **Numere** (int, float).
+2. **Șiruri de caractere** (str).
+3. **Tuple** (tuple), dacă conțin doar elemente imutabile.
+4. **frozenset** — versiunea imutabilă a mulțimii, care poate fi folosită ca cheie.
+5. **Tipuri Boolean** (True, False).
+
+**Exemplu de folosire a `frozenset` ca și cheie:**
+
 ```python
 students_courses = {}
 name_age = frozenset(['Anatoly', 32])
@@ -33,487 +35,550 @@ students_courses.update({name_age: ['Python', 'C++']})
 print(students_courses)  # => {frozenset({32, 'Anatoly'}): ['Python', 'C++']}
 ```
 
-**Что нельзя использовать в качестве ключей:**
-- **Списки** (list)
-- **Множества** (set)
-- **Другие изменяемые типы данных**
+**Ce nu poate fi folosit ca cheie:**
 
-Таким образом, для использования сложных структур данных в качестве ключей (например, пары значений), можно использовать `frozenset`, так как он является неизменяемым.
-### Синтаксис:
+* **Liste** (list)
+* **Mulțimi** (set)
+* **Alte tipuri de date modificabile**
+
+Astfel, pentru utilizarea unor structuri complexe de date ca și chei (de exemplu, perechi de valori), se poate folosi `frozenset`, deoarece este imutabil.
+
+### Sintaxă:
+
 ```python
-# Создание словаря
+# Crearea unui dicționar
 my_dict = {"name": "Alice", "age": 25, "city": "New York"}
 
-# Доступ к значению по ключу
+# Accesarea valorii după cheie
 print(my_dict["name"])  # Alice
 
-# Добавление нового элемента
+# Adăugarea unui element nou
 my_dict["job"] = "Engineer"
 print(my_dict)  # {'name': 'Alice', 'age': 25, 'city': 'New York', 'job': 'Engineer'}
 
-# Удаление элемента
+# Ștergerea unui element
 del my_dict["age"]
 print(my_dict)  # {'name': 'Alice', 'city': 'New York', 'job': 'Engineer'}
 
-# Получение всех ключей или значений
+# Obținerea tuturor cheilor sau valorilor
 print(my_dict.keys())   # dict_keys(['name', 'city', 'job'])
 print(my_dict.values()) # dict_values(['Alice', 'New York', 'Engineer'])
 ```
 
-## Методы словаря:
+## Metode ale dicționarului:
 
 ### 1. **`get(key)`**
-Метод `get(key)` возвращает значение по указанному ключу. Если ключ отсутствует, то возвращается `None` (или указанный второй аргумент, если он передан).
 
-Пример:
+Metoda `get(key)` returnează valoarea asociată cheii specificate. Dacă cheia lipsește, returnează `None` (sau al doilea argument, dacă este specificat).
+
+Exemplu:
+
 ```python
 my_dict = {"name": "Alice", "age": 25}
 
-# Получение значения по ключу
+# Obținerea valorii după cheie
 print(my_dict.get("name"))  # "Alice"
 print(my_dict.get("gender"))  # None
 
-# Можно указать значение по умолчанию
+# Se poate specifica o valoare implicită
 print(my_dict.get("gender", "Unknown"))  # "Unknown"
 ```
 
 ### 2. **`items()`**
-Метод `items()` возвращает представление всех пар (ключ, значение) в словаре в виде итератора.
 
-Пример:
+Metoda `items()` returnează o vizualizare a tuturor perechilor (cheie, valoare) din dicționar sub formă de iterator.
+
+Exemplu:
+
 ```python
 my_dict = {"name": "Alice", "age": 25, "city": "New York"}
 
-# Получение всех пар ключ-значение
+# Obținerea tuturor perechilor cheie-valoare
 print(my_dict.items())  # dict_items([('name', 'Alice'), ('age', 25), ('city', 'New York')])
 
-# Преобразуем в список
+# Convertim în listă
 print(list(my_dict.items()))  # [('name', 'Alice'), ('age', 25), ('city', 'New York')]
 ```
 
 ### 3. **`pop(key)`**
-Метод `pop(key)` удаляет пару "ключ-значение" по ключу и возвращает соответствующее значение. Если ключ отсутствует, будет выброшено исключение `KeyError`.
 
-Пример:
+Metoda `pop(key)` șterge perechea "cheie-valoare" după cheie și returnează valoarea corespunzătoare. Dacă cheia lipsește, va fi ridicată excepția `KeyError`.
+
+Exemplu:
+
 ```python
 my_dict = {"name": "Alice", "age": 25, "city": "New York"}
 
-# Удаляем пару с ключом "age"
+# Ștergem perechea cu cheia "age"
 value = my_dict.pop("age")
 print(value)  # 25
 print(my_dict)  # {'name': 'Alice', 'city': 'New York'}
 
-# Попытка удалить отсутствующий ключ вызовет ошибку
+# Încercarea de a șterge o cheie inexistentă va cauza eroare
 # my_dict.pop("gender")  # KeyError: 'gender'
 ```
 
 ### 4. **`update()`**
-Метод `update()` используется для обновления словаря новыми парами "ключ-значение". Если ключ уже существует, его значение будет обновлено. Если ключ отсутствует, будет добавлена новая пара "ключ-значение".
 
-Пример:
+Metoda `update()` este folosită pentru a actualiza dicționarul cu noi perechi "cheie-valoare". Dacă cheia există deja, valoarea ei va fi actualizată. Dacă cheia lipsește, va fi adăugată o nouă pereche "cheie-valoare".
+
+Exemplu:
+
 ```python
 my_dict = {"name": "Alice", "age": 25}
 
-# Обновление словаря новыми парами ключ-значение
+# Actualizarea dicționarului cu noi perechi cheie-valoare
 my_dict.update({"age": 26, "city": "New York"})
 print(my_dict)  # {'name': 'Alice', 'age': 26, 'city': 'New York'}
 
-# Можно обновить словарь с помощью другого словаря
+# Se poate actualiza dicționarul folosind un alt dicționar
 other_dict = {"gender": "female", "country": "USA"}
 my_dict.update(other_dict)
 print(my_dict)  # {'name': 'Alice', 'age': 26, 'city': 'New York', 'gender': 'female', 'country': 'USA'}
 ```
-### 5. **`keys()`**
-Метод возвращает представление всех ключей в словаре. Это представление является итератором, и его можно преобразовать в список или использовать в цикле.
 
-Пример:
+### 5. **`keys()`**
+
+Metoda returnează o vizualizare a tuturor cheilor din dicționar. Această vizualizare este un iterator și poate fi convertită într-o listă sau utilizată într-un ciclu.
+
+Exemplu:
+
 ```python
 my_dict = {"name": "Alice", "age": 25, "city": "New York"}
 
-# Получение всех ключей
+# Obținerea tuturor cheilor
 keys = my_dict.keys()
 print(keys)  # dict_keys(['name', 'age', 'city'])
 
-# Преобразуем в список
+# Convertim în listă
 print(list(keys))  # ['name', 'age', 'city']
 
-# Использование в цикле
+# Utilizare într-un ciclu
 for key in my_dict.keys():
     print(key)
 ```
-### 6. **`popitem()`** 
-Метод удаляет и возвращает пару (ключ, значение) из словаря. Пара возвращается как кортеж `(key, value)`. В Python 3.7+ элемент, который будет удален, — это последняя добавленная пара, так как словари стали упорядоченными начиная с этой версии.
 
-Пример:
+### 6. **`popitem()`**
+
+Metoda șterge și returnează o pereche (cheie, valoare) din dicționar. Perechea este returnată ca un tuple `(key, value)`. În Python 3.7+, elementul care va fi șters este ultima pereche adăugată, deoarece dicționarele au devenit ordonate începând cu această versiune.
+
+Exemplu:
 
 ```python
 my_dict = {"name": "Alice", "age": 25, "city": "New York"}
 
-# Удаление и возвращение последнего элемента
+# Ștergerea și returnarea ultimului element
 key, value = my_dict.popitem()
-print(key, value)  # например: 'city New York'
+print(key, value)  # de exemplu: 'city New York'
 
-# Проверим, что элемент удален
+# Verificăm că elementul a fost șters
 print(my_dict)  # {'name': 'Alice', 'age': 25}
 ```
-### 6. **`values()`** 
-Метод возвращает все значения словаря в виде **объекта `dict_values`**, который является итерабельным. Он не возвращает список, но вы можете преобразовать его в список с помощью функции `list()`.
 
-Пример:
+### 7. **`values()`**
+
+Metoda returnează toate valorile dicționarului sub formă de **obiect `dict_values`**, care este iterabil. Nu returnează o listă, dar poate fi convertit într-o listă folosind funcția `list()`.
+
+Exemplu:
 
 ```python
 my_dict = {"name": "Alice", "age": 25, "city": "New York"}
 
-# Получение всех значений словаря
+# Obținerea tuturor valorilor din dicționar
 values = my_dict.values()
 print(values)  # dict_values(['Alice', 25, 'New York'])
 
-# Преобразование в список
+# Conversia într-o listă
 values_list = list(values)
 print(values_list)  # ['Alice', 25, 'New York']
 ```
-Методы **`count()`** и **`index()`** обычно используются в списках, но не применимы напрямую к словарям, так как словарь представляет собой набор пар "ключ-значение". Однако, я могу объяснить их для работы со списками:
 
-### 7. **`count()`**:
-Метод **`count()`** возвращает количество вхождений элемента в список.
+Metodele **`count()`** și **`index()`** sunt utilizate de obicei pentru liste, dar nu se aplică direct dicționarelor, deoarece un dicționar reprezintă un set de perechi "cheie-valoare". Totuși, le putem explica pentru lucrul cu liste:
 
-**Пример**:
+### 8. **`count()`**
+
+Metoda **`count()`** returnează numărul de apariții ale unui element într-o listă.
+
+Exemplu:
 
 ```python
 my_list = [1, 2, 3, 4, 2, 5, 2]
 
-# Подсчёт количества вхождений числа 2
+# Numărarea aparițiilor numărului 2
 count = my_list.count(2)
-print(count)  # Выведет 3
+print(count)  # Va afișa 3
 ```
 
-### 8. **`index()`**:
-Метод **`index()`** возвращает индекс первого вхождения элемента в список. Если элемент не найден, возникает ошибка **`ValueError`**.
+### 9. **`index()`**
 
-**Пример**:
+Metoda **`index()`** returnează indexul primei apariții a unui element în listă. Dacă elementul nu este găsit, apare eroarea **`ValueError`**.
+
+Exemplu:
 
 ```python
 my_list = [1, 2, 3, 4, 2, 5]
 
-# Получение индекса первого вхождения числа 2
+# Obținerea indexului primei apariții a numărului 2
 index = my_list.index(2)
-print(index)  # Выведет 1
+print(index)  # Va afișa 1
 
-# Попытка найти элемент, которого нет в списке, вызовет ошибку
+# Încercarea de a găsi un element care nu există va cauza eroare
 # my_list.index(6)  # ValueError: 6 is not in list
 ```
-### 9. **`fromkeys()`** 
-Метод используется для создания нового словаря с заданными ключами, при этом все значения будут иметь одинаковое значение по умолчанию. Этот метод возвращает новый словарь, в котором каждому ключу будет присвоено значение, которое передано в качестве второго аргумента, или `None`, если значение не указано.
 
-### Синтаксис:
+### 10. **`fromkeys()`**
+
+Metoda este utilizată pentru crearea unui dicționar nou cu chei specificate, toate având aceeași valoare implicită. Metoda returnează un dicționar nou, în care fiecărei chei i se atribuie valoarea trecută ca al doilea argument sau `None`, dacă nu este specificată nicio valoare.
+
+### Sintaxă:
+
 ```python
 dict.fromkeys(iterable, value=None)
 ```
 
-- **`iterable`** — это последовательность (например, список, кортеж, строка), которая содержит ключи.
-- **`value`** — значение, которое будет присвоено всем ключам (по умолчанию `None`).
+* **`iterable`** — o secvență (de exemplu, listă, tuple, șir) care conține cheile.
+* **`value`** — valoarea care va fi atribuită tuturor cheilor (implicit `None`).
 
-### Пример 1: Использование **`fromkeys()`** с заданным значением:
+Exemplu 1: Folosirea **`fromkeys()`** cu o valoare specificată:
 
 ```python
 keys = ['a', 'b', 'c']
 new_dict = dict.fromkeys(keys, 0)
-print(new_dict)  # Выведет {'a': 0, 'b': 0, 'c': 0}
+print(new_dict)  # Va afișa {'a': 0, 'b': 0, 'c': 0}
 ```
 
-В этом примере создаётся словарь, где все ключи ('a', 'b', 'c') получают значение 0.
-
-### Пример 2: Использование **`fromkeys()`** без значения:
+Exemplu 2: Folosirea **`fromkeys()`** fără valoare:
 
 ```python
 keys = ['a', 'b', 'c']
 new_dict = dict.fromkeys(keys)
-print(new_dict)  # Выведет {'a': None, 'b': None, 'c': None}
+print(new_dict)  # Va afișa {'a': None, 'b': None, 'c': None}
 ```
 
-Здесь значение по умолчанию для всех ключей будет `None`.
+Această metodă este utilă atunci când vrem să creăm un dicționar cu un set de chei, dar valorile vor fi identice sau dorim doar să inițializăm dicționarul cu o valoare implicită.
 
-Этот метод полезен, когда нужно создать словарь с набором ключей, но значениями будут быть одинаковыми или нужно просто инициализировать словарь с дефолтным значением.
-### 10.  **`clear()`** 
-Метод используется для удаления всех элементов из словаря. После его применения словарь становится пустым.
+### 11. **`clear()`**
 
-### Синтаксис:
+Metoda este utilizată pentru ștergerea tuturor elementelor din dicționar. După aplicarea ei, dicționarul devine gol.
+
+### Sintaxă:
+
 ```python
 dict.clear()
 ```
 
-- **Этот метод не принимает аргументов.**
+* **Această metodă nu primește argumente.**
 
-### Пример использования **`clear()`**:
+Exemplu de utilizare **`clear()`**:
 
 ```python
 my_dict = {'a': 1, 'b': 2, 'c': 3}
-print("До очистки:", my_dict)  # Выведет: {'a': 1, 'b': 2, 'c': 3}
+print("Înainte de curățare:", my_dict)  # Va afișa: {'a': 1, 'b': 2, 'c': 3}
 
 my_dict.clear()
-print("После очистки:", my_dict)  # Выведет: {}
+print("După curățare:", my_dict)  # Va afișa: {}
 ```
 
-После вызова метода **`clear()`** все пары "ключ-значение" из словаря будут удалены, и словарь станет пустым.
-Этот метод полезен, когда нужно очистить словарь от всех элементов, но при этом сам словарь остаётся доступным для дальнейшего использования.
-### 11. **`copy()`**
+După apelarea metodei **`clear()`**, toate perechile "cheie-valoare" din dicționar vor fi șterse, iar dicționarul va deveni gol.
+Această metodă este utilă atunci când trebuie să golim dicționarul de toate elementele, dar dicționarul în sine rămâne disponibil pentru utilizare ulterioară.
 
-Метод **`copy()`** используется для создания поверхностной копии словаря. Это означает, что создается новый словарь, содержащий те же ключи и значения, что и оригинальный, но изменения в новом словаре не повлияют на оригинальный.
+### 12. **`copy()`**
 
-### Синтаксис:
+Metoda **`copy()`** este utilizată pentru a crea o copie superficială a dicționarului. Aceasta înseamnă că se creează un nou dicționar care conține aceleași chei și valori ca și cel original, dar modificările în noul dicționar nu vor afecta dicționarul original.
+
+### Sintaxă:
+
 ```python
 new_dict = dict.copy()
 ```
 
-### Пример использования **`copy()`**:
+### Exemplu de utilizare **`copy()`**:
+
 ```python
 original_dict = {'a': 1, 'b': 2, 'c': 3}
 new_dict = original_dict.copy()
 
-print("Оригинальный словарь:", original_dict)  # Выведет: {'a': 1, 'b': 2, 'c': 3}
-print("Копия словаря:", new_dict)  # Выведет: {'a': 1, 'b': 2, 'c': 3}
+print("Dicționar original:", original_dict)  # Va afișa: {'a': 1, 'b': 2, 'c': 3}
+print("Copie a dicționarului:", new_dict)   # Va afișa: {'a': 1, 'b': 2, 'c': 3}
 
-# Изменим копию
+# Modificăm copia
 new_dict['a'] = 10
-print("Измененная копия:", new_dict)  # Выведет: {'a': 10, 'b': 2, 'c': 3}
-print("Оригинальный словарь после изменения копии:", original_dict)  # Выведет: {'a': 1, 'b': 2, 'c': 3}
+print("Copie modificată:", new_dict)         # Va afișa: {'a': 10, 'b': 2, 'c': 3}
+print("Dicționar original după modificarea copiei:", original_dict)  # Va afișa: {'a': 1, 'b': 2, 'c': 3}
 ```
 
-Важно заметить, что метод **`copy()`** создаёт поверхностную копию, то есть, если значения в словаре — это изменяемые объекты (например, списки), то они будут изменяться в обоих словарях.
+Este important de menționat că metoda **`copy()`** creează o copie superficială, adică, dacă valorile din dicționar sunt obiecte modificabile (de exemplu, liste), acestea vor fi partajate între dicționarul original și copie.
 
 ---
 
-### 12. **`setdefault()`**
+### 13. **`setdefault()`**
 
-Метод **`setdefault()`** используется для получения значения по ключу, и если этого ключа нет в словаре, метод добавит ключ с указанным значением. Он возвращает значение, ассоциированное с ключом, если ключ существует, или добавляет ключ с заданным значением и возвращает это значение.
+Metoda **`setdefault()`** este utilizată pentru a obține valoarea asociată unei chei, iar dacă cheia nu există în dicționar, metoda adaugă cheia cu valoarea specificată. Ea returnează valoarea asociată cheii dacă aceasta există sau adaugă cheia cu valoarea dată și returnează această valoare.
 
-### Синтаксис:
+### Sintaxă:
+
 ```python
 dict.setdefault(key, default_value)
 ```
 
-- **`key`** — ключ, значение которого необходимо получить.
-- **`default_value`** — значение, которое будет установлено по умолчанию, если ключ отсутствует. Если не указано, то значением по умолчанию будет `None`.
+* **`key`** — cheia al cărei valoare dorim să o obținem.
+* **`default_value`** — valoarea care va fi setată dacă cheia lipsește. Dacă nu este specificată, valoarea implicită este `None`.
 
-### Пример использования **`setdefault()`**:
+### Exemplu de utilizare **`setdefault()`**:
+
 ```python
 my_dict = {'a': 1, 'b': 2, 'c': 3}
 
-# Получаем значение для ключа 'b'
-print(my_dict.setdefault('b', 100))  # Выведет: 2 (значение для ключа 'b')
+# Obținem valoarea pentru cheia 'b'
+print(my_dict.setdefault('b', 100))  # Va afișa: 2 (valoarea pentru 'b')
 
-# Ключ 'd' отсутствует, добавляем его с значением 4
-print(my_dict.setdefault('d', 4))  # Выведет: 4
+# Cheia 'd' lipsește, o adăugăm cu valoarea 4
+print(my_dict.setdefault('d', 4))    # Va afișa: 4
 
-# Словарь после добавления нового ключа
-print(my_dict)  # Выведет: {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+# Dicționarul după adăugarea noii chei
+print(my_dict)  # Va afișa: {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 
-# Если ключ 'a' уже существует, он не изменится
-print(my_dict.setdefault('a', 10))  # Выведет: 1 (значение для ключа 'a')
+# Dacă cheia 'a' există deja, ea nu se va schimba
+print(my_dict.setdefault('a', 10))   # Va afișa: 1 (valoarea pentru 'a')
 ```
 
-Метод **`setdefault()`** полезен, когда нужно безопасно добавить новый ключ в словарь, не опасаясь его перезаписывания, если он уже существует.
+Metoda **`setdefault()`** este utilă atunci când dorim să adăugăm în siguranță o cheie nouă în dicționar fără a suprascrie valoarea existentă.
 
-**Особенности**:
-- Этот метод полезен для перебора значений словаря.
-- Значения могут быть любого типа, включая другие коллекции, функции и т. д.
+**Particularități**:
 
-**Особенности**:
-- Если словарь пуст, вызов **`popitem()`** вызовет ошибку `KeyError`.
-- В Python 3.6 и более ранних версиях словари не были упорядочены, и метод **`popitem()`** возвращал произвольную пару.
-**Особенности**:
-- Метод **`keys()`** возвращает представление ключей, а не сам список. Это значит, что оно не будет копировать ключи в память, а будет работать с текущими данными словаря.
-- Это представление поддерживает итерацию, поэтому можно использовать его в цикле или преобразовать в другие коллекции (например, в список).
-Эти методы являются основными для работы со словарями, позволяя выполнять поиск, изменение, удаление и добавление элементов.
+* Această metodă este utilă pentru iterarea valorilor din dicționar.
+* Valorile pot fi de orice tip, inclusiv alte colecții, funcții etc.
 
-### Кортежи (tuple)
+**Observații suplimentare**:
 
-**Кортеж** — это упорядоченная коллекция данных, которая является **неизменяемой**. Элементы кортежа могут быть любого типа, и кортежи могут содержать повторяющиеся элементы. Они часто используются для хранения данных, которые не должны изменяться.
+* Dacă dicționarul este gol, apelarea metodei **`popitem()`** va genera eroarea `KeyError`.
+* În Python 3.6 și versiunile anterioare, dicționarele nu erau ordonate, iar metoda **`popitem()`** returna o pereche arbitrară.
+* Metoda **`keys()`** returnează o vizualizare a cheilor, nu o listă efectivă. Aceasta înseamnă că nu copiază cheile în memorie și operează cu datele curente ale dicționarului.
+* Vizualizarea suportă iterația și poate fi folosită într-un ciclu sau convertită în alte colecții (de exemplu, listă).
 
-#### Основные характеристики:
-- **Упорядоченные** (сохраняют порядок элементов).
-- **Неизменяемые** (нельзя изменять элементы после создания).
-- **Индексация**: к элементам можно обращаться по индексу.
+Aceste metode sunt esențiale pentru lucrul cu dicționarele, permițând căutarea, modificarea, ștergerea și adăugarea de elemente.
 
-Кортежи используются для защиты данных от записи и, как правило, работают быстрее, чем
-списки, поскольку они не могут изменяться динамически
-#### Синтаксис:
+---
+
+### Tuple (kortejuri)
+
+**Tuple** — este o colecție ordonată de date care este **imutabilă**. Elementele unui tuple pot fi de orice tip, iar tuple-urile pot conține elemente repetitive. Ele sunt folosite adesea pentru a stoca date care nu trebuie modificate.
+
+#### Caracteristici principale:
+
+* **Ordonate** (păstrează ordinea elementelor).
+* **Imutabile** (elementele nu pot fi modificate după creare).
+* **Indexare**: elementele pot fi accesate prin index.
+
+Tuple-urile sunt folosite pentru protejarea datelor împotriva modificării și, în general, rulează mai rapid decât listele, deoarece nu se pot modifica dinamic.
+
+#### Sintaxă:
+
 ```python
-# Создание кортежа
+# Crearea unui tuple
 my_tuple = (1, 2, 3, 4, 5)
 
-# Доступ к элементам
+# Accesarea elementelor
 print(my_tuple[0])  # 1
 
-# Кортежи могут содержать различные типы данных
+# Tuple-urile pot conține tipuri de date diferite
 mixed_tuple = (1, "apple", 3.14, True)
 
-# Кортежи поддерживают срезы
+# Tuple-urile suportă slicing
 print(my_tuple[1:3])  # (2, 3)
 ```
-## Основные методы кортежа:
+
+## Metode principale pentru tuple:
 
 ### 1. **`count(value)`**
-Этот метод возвращает количество вхождений значения **`value`** в кортеж.
 
-#### Пример:
+Metoda returnează numărul de apariții ale valorii **`value`** în tuple.
+
+Exemplu:
+
 ```python
 my_tuple = (1, 2, 3, 1, 4, 1)
-print(my_tuple.count(1))  # Выведет: 3
+print(my_tuple.count(1))  # Va afișa: 3
 ```
 
 ### 2. **`index(value, start=0, end=len(tuple))`**
-Метод **`index()`** возвращает индекс первого элемента, равного **`value`**. Также можно указать диапазон поиска с помощью параметров **`start`** и **`end`**.
 
-#### Пример:
+Metoda **`index()`** returnează indexul primei apariții a valorii **`value`**. Se poate specifica și un interval de căutare prin parametrii **`start`** și **`end`**.
+
+Exemplu:
+
 ```python
 my_tuple = (1, 2, 3, 4, 5)
-print(my_tuple.index(3))  # Выведет: 2
+print(my_tuple.index(3))         # Va afișa: 2
 
-# С параметрами start и end
-print(my_tuple.index(4, 2, 5))  # Выведет: 3
+# Cu parametrii start și end
+print(my_tuple.index(4, 2, 5))   # Va afișa: 3
 ```
-
 ### 3. **`__contains__(value)`**
-Метод **`__contains__()`** проверяет, содержится ли значение **`value`** в кортеже. Он используется, когда вы применяете оператор **`in`**.
 
-#### Пример:
+Metoda **`__contains__()`** verifică dacă o valoare **`value`** se află în tuple. Este folosită atunci când aplicăm operatorul **`in`**.
+
+Exemplu:
+
 ```python
 my_tuple = (1, 2, 3, 4, 5)
-print(3 in my_tuple)  # Выведет: True
-print(6 in my_tuple)  # Выведет: False
+print(3 in my_tuple)  # Va afișa: True
+print(6 in my_tuple)  # Va afișa: False
 ```
 
 ### 4. **`len()`**
-Хотя **`len()`** — это встроенная функция, она часто используется с кортежами для получения количества элементов в кортеже.
 
-#### Пример:
+Deși **`len()`** este o funcție încorporată, este folosită frecvent cu tuple pentru a obține numărul de elemente din tuple.
+
+Exemplu:
+
 ```python
 my_tuple = (1, 2, 3, 4, 5)
-print(len(my_tuple))  # Выведет: 5
+print(len(my_tuple))  # Va afișa: 5
 ```
 
-### 5. **`max()` и `min()`**
-Это не методы кортежей напрямую, но их можно использовать с кортежами для получения максимального или минимального значения.
+### 5. **`max()` și `min()`**
 
-#### Пример:
+Acestea nu sunt metode ale tuple-urilor, dar pot fi folosite cu tuple pentru a obține valoarea maximă sau minimă.
+
+Exemplu:
+
 ```python
 my_tuple = (1, 2, 3, 4, 5)
-print(max(my_tuple))  # Выведет: 5
-print(min(my_tuple))  # Выведет: 1
+print(max(my_tuple))  # Va afișa: 5
+print(min(my_tuple))  # Va afișa: 1
 ```
 
-Кортежи не поддерживают методы добавления, удаления или изменения элементов, так как они неизменяемы. Однако вышеупомянутые методы полезны для анализа содержимого кортежа.
-#### Преимущества кортежей:
-- **Производительность**: кортежи занимают меньше памяти и быстрее работают в сравнении с списками.
-- **Использование в качестве ключей в словарях**: поскольку кортежи неизменяемы, их можно использовать как ключи в словарях (в отличие от списков).
+Tuple-urile nu suportă metode de adăugare, ștergere sau modificare a elementelor, deoarece sunt imutabile. Totuși, metodele de mai sus sunt utile pentru analiza conținutului unui tuple.
 
-#### Операции с кортежами:
-- **Конкатенация**: можно объединять два кортежа.
+#### Avantajele tuple-urilor:
+
+* **Performanță**: tuple-urile ocupă mai puțină memorie și rulează mai rapid decât listele.
+* **Folosire ca chei în dicționare**: deoarece tuple-urile sunt imutabile, ele pot fi folosite ca chei în dicționare (spre deosebire de liste).
+
+#### Operații cu tuple:
+
+* **Concatenare**: se pot combina două tuple-uri.
+
 ```python
 tuple1 = (1, 2)
 tuple2 = (3, 4)
 print(tuple1 + tuple2)  # (1, 2, 3, 4)
 ```
-- **Умножение**: можно повторить кортеж несколько раз.
+
+* **Înmulțire**: se poate repeta un tuple de mai multe ori.
+
 ```python
 tuple1 = (1, 2)
 print(tuple1 * 3)  # (1, 2, 1, 2, 1, 2)
 ```
 
-**Сравнение**:
-- Словари удобны для хранения пар "ключ-значение", когда необходим быстрый доступ по ключу.
-- Кортежи лучше подходят для представления неизменяемых коллекций данных, когда порядок важен, но элементы не должны изменяться.
+**Comparație**:
 
-![img.png](../images/l_3/img.png)
+* Dicționarele sunt convenabile pentru stocarea perechilor "cheie-valoare", atunci când este nevoie de acces rapid după cheie.
+* Tuple-urile sunt mai potrivite pentru reprezentarea colecțiilor imutabile de date, când ordinea contează, dar elementele nu trebuie modificate.
 
-## Конструкторы коллекций
+---
 
-В Python существуют специальные функции, называемые **конструкторами коллекций**, которые позволяют преобразовывать данные в различные типы коллекций. Эти функции часто используются для создания новых коллекций из других типов данных или для преобразования данных в коллекции. Вот несколько основных конструкторов коллекций:
+## Constructori de colecții
 
-#### 1. **`list()`**
-Функция `list()` используется для создания списка из итерируемого объекта (например, строки, множества, кортежа, диапазона и т. д.). Она позволяет легко преобразовать другие коллекции в список.
+În Python există funcții speciale numite **constructori de colecții**, care permit transformarea datelor în diferite tipuri de colecții. Aceste funcții sunt folosite frecvent pentru a crea colecții noi din alte tipuri de date sau pentru a converti datele în colecții.
 
-**Пример**:
+### 1. **`list()`**
+
+Funcția `list()` creează o listă dintr-un obiect iterabil (de exemplu, șir, set, tuple, range etc.). Permite transformarea altor colecții în listă.
+
+Exemplu:
+
 ```python
-# Преобразование строки в список
+# Transformarea unui șir într-o listă
 string = "hello"
 list_from_string = list(string)
 print(list_from_string)  # ['h', 'e', 'l', 'l', 'o']
 
-# Преобразование диапазона в список
+# Transformarea unui range într-o listă
 range_obj = range(5)
 list_from_range = list(range_obj)
 print(list_from_range)  # [0, 1, 2, 3, 4]
 ```
 
-#### 2. **`tuple()`**
-Функция `tuple()` создает кортеж из любого итерируемого объекта. Кортежи аналогичны спискам, но они неизменяемы.
+### 2. **`tuple()`**
 
-**Пример**:
+Funcția `tuple()` creează un tuple din orice obiect iterabil. Tuple-urile sunt similare listelor, dar sunt imutabile.
+
+Exemplu:
+
 ```python
-# Преобразование списка в кортеж
+# Transformarea unei liste într-un tuple
 my_list = [1, 2, 3, 4]
 tuple_from_list = tuple(my_list)
 print(tuple_from_list)  # (1, 2, 3, 4)
 
-# Преобразование строки в кортеж
+# Transformarea unui șir într-un tuple
 string = "hello"
 tuple_from_string = tuple(string)
 print(tuple_from_string)  # ('h', 'e', 'l', 'l', 'o')
 ```
 
-#### 3. **`set()`**
-Функция `set()` используется для создания множества из итерируемого объекта. Множества в Python — это неупорядоченные коллекции, которые не допускают повторяющихся элементов.
+### 3. **`set()`**
 
-**Пример**:
+Funcția `set()` creează un set dintr-un obiect iterabil. Seturile în Python sunt colecții neordonate care nu permit elemente duplicate.
+
+Exemplu:
+
 ```python
-# Преобразование списка в множество
+# Transformarea unei liste într-un set
 my_list = [1, 2, 2, 3, 4, 4]
 set_from_list = set(my_list)
 print(set_from_list)  # {1, 2, 3, 4}
 
-# Преобразование строки в множество
+# Transformarea unui șir într-un set
 string = "hello"
 set_from_string = set(string)
 print(set_from_string)  # {'h', 'e', 'l', 'o'}
 ```
 
-#### 4. **`dict()`**
-Функция `dict()` используется для создания словаря. Обычно она принимает итерируемый объект, состоящий из пар ключ-значение. Также можно передать аргументы в виде ключевых слов.
+### 4. **`dict()`**
 
-**Пример**:
+Funcția `dict()` creează un dicționar. De obicei primește un obiect iterabil de perechi cheie-valoare sau se pot folosi argumente sub formă de cuvinte cheie.
+
+Exemplu:
+
 ```python
-# Преобразование списка кортежей в словарь
+# Transformarea unei liste de tuple-uri într-un dicționar
 my_list = [("apple", 1), ("banana", 2), ("cherry", 3)]
 dict_from_list = dict(my_list)
 print(dict_from_list)  # {'apple': 1, 'banana': 2, 'cherry': 3}
 
-# Создание словаря с использованием ключевых слов
+# Crearea unui dicționar folosind cuvinte cheie
 dict_from_keywords = dict(apple=1, banana=2, cherry=3)
 print(dict_from_keywords)  # {'apple': 1, 'banana': 2, 'cherry': 3}
 ```
 
-#### 5. **`frozenset()`**
-Функция `frozenset()` создает неизменяемое множество. Это полезно, если необходимо создать множество, которое не будет изменяться после его создания.
+### 5. **`frozenset()`**
 
-**Пример**:
+Funcția `frozenset()` creează un set imutabil. Este util atunci când este nevoie de un set care să nu fie modificat după creare.
+
+Exemplu:
+
 ```python
-# Преобразование списка в frozenset
+# Transformarea unei liste într-un frozenset
 my_list = [1, 2, 2, 3, 4]
 frozenset_from_list = frozenset(my_list)
 print(frozenset_from_list)  # frozenset({1, 2, 3, 4})
 
-# Преобразование строки в frozenset
+# Transformarea unui șir într-un frozenset
 string = "hello"
 frozenset_from_string = frozenset(string)
 print(frozenset_from_string)  # frozenset({'h', 'e', 'l', 'o'})
 ```
 
-### Зачем использовать конструктора коллекций?
-Конструкторы коллекций полезны, когда нужно:
-- Преобразовать данные из одного типа в другой (например, из строки в список).
-- Убедиться, что коллекция не содержит повторяющихся элементов (например, при создании множества).
-- Создать коллекцию с ограничениями, как например, неизменяемое множество с `frozenset()`.
+### De ce să folosim constructorii de colecții?
 
-Эти функции позволяют гибко работать с данными, удобно преобразуя их в нужные типы коллекций для дальнейших операций.
+Constructorii de colecții sunt utili atunci când trebuie să:
+
+* Transformăm datele dintr-un tip în altul (de exemplu, din șir în listă).
+* Ne asigurăm că o colecție nu conține elemente duplicate (de exemplu, la crearea unui set).
+* Creăm o colecție cu restricții, cum ar fi un set imutabil cu `frozenset()`.
+
+Aceste funcții permit o manipulare flexibilă a datelor și transformarea lor în tipul de colecție potrivit pentru operațiile ulterioare.

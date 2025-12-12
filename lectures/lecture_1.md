@@ -1,329 +1,371 @@
-# Лекция 1: Введение в Python
+Конечно! Вот перевод вашей лекции на румынский язык:
 
-### 1. Почему Python?
-#### Python - кроссплатформенный язык программирования
+---
 
-Python — это кроссплатформенный язык программирования, что означает, что он работает на различных платформах, таких как **Windows**, **macOS**, **Linux** и даже может быть портирован на виртуальные машины **Java** и **.NET**.
+# Lecția 1: Introducere în Python
 
-#### Поддержка различных парадигм
+### 1. De ce Python?
 
-Python поддерживает несколько стилей программирования:
-- **Процедурное программирование**
-- **Объектно-ориентированное программирование**
-- **Функциональное программирование**
+#### Python – limbaj de programare cross-platform
 
-#### Основные характеристики языка
+Python este un limbaj de programare cross-platform, ceea ce înseamnă că funcționează pe diferite platforme, cum ar fi **Windows**, **macOS**, **Linux**, și poate fi portat chiar și pe mașini virtuale **Java** și **.NET**.
 
-- **Простота синтаксиса**: Python использует читабельный и интуитивно понятный синтаксис, что делает его идеальным для начинающих.
-- **Широкое применение**: Python используют в науке о данных, веб-разработке, машинном обучении, автоматизации и других областях.
-- **Большая поддержка и сообщество**: огромная библиотека модулей и активное сообщество поддержки.
+#### Suport pentru mai multe paradigme
 
+Python suportă mai multe stiluri de programare:
 
-#### Основные области применения Python
+* **Programare procedurală**
+* **Programare orientată pe obiecte**
+* **Programare funcțională**
 
-- **Веб-разработка**: можно использовать для создания серверных веб-приложений, подключения к базам данных и работы с файлами данных.
-- **Разработка ПО**: подходит для быстрого создания прототипов и разработки готового к производству ПО.
-- **Математика и наука**: Python отлично подходит для обработки больших данных и выполнения сложных математических расчетов.
-- **Системные скрипты**: используется для написания скриптов для автоматизации рабочих процессов в операционных системах.
+#### Caracteristici principale ale limbajului
+
+* **Simplitatea sintaxei**: Python folosește o sintaxă lizibilă și intuitivă, ceea ce îl face ideal pentru începători.
+* **Aplicabilitate largă**: Python este folosit în știința datelor, dezvoltarea web, machine learning, automatizare și alte domenii.
+* **Suport și comunitate mare**: o bibliotecă extinsă de module și o comunitate activă.
+
+#### Domenii principale de aplicare a Python
+
+* **Dezvoltare web**: se poate folosi pentru crearea aplicațiilor web server-side, conectarea la baze de date și manipularea fișierelor.
+* **Dezvoltare software**: potrivit pentru prototipare rapidă și dezvoltarea de software gata de producție.
+* **Matematică și știință**: excelent pentru procesarea datelor mari și realizarea calculelor matematice complexe.
+* **Scripturi de sistem**: folosit pentru scrierea de scripturi care automatizează procese în sistemele de operare.
 
 ![Python for everything](../images/lecture_1/img_2.png)
 
-#### Примеры крупных проектов на Python
+#### Exemple de proiecte mari realizate în Python
 
-Python использовался при создании таких проектов, как:
-- **Wikipedia**
-- **Google** (где работал Гвидо ван Россум, создатель Python)
-- **Yahoo!**, **CERN**, **NASA**
-- Популярные сервисы **PayPal**, **Instagram**, **Spotify**
----
-### 2. Краткая история языка программирования Python
+Python a fost utilizat în proiecte precum:
 
-1. **1980-е годы**: Идея создания Python появилась в голове Гвидо ван Россума, который работал в Нидерландах в Центре математики и информатики (CWI). Он искал язык, который был бы простым и удобным для написания кода, но при этом мощным и гибким.
-
-2. **1991 год**: Гвидо ван Россум выпустил первую версию Python (0.9.0). Язык был задуман как интерпретируемый и с поддержкой объектов. Он сочетал простоту синтаксиса с мощными возможностями для разработки.
-
-3. **1994 год**: Выход Python 1.0. Язык начал набирать популярность благодаря простоте и читаемости кода.
-
-4. **2000 год**: Python 2.0 — новая версия с улучшенной поддержкой юнит-тестирования и улучшенной системой исключений. На протяжении нескольких лет Python 2 оставался основной версией языка.
-
-5. **2008 год**: Вышла версия Python 3.0. Она привнесла множество улучшений, включая поддержку Unicode, улучшение синтаксиса и стандартных библиотек. Однако она была несовместима с Python 2, что вызвало переходный период, в течение которого обе версии использовались параллельно.
-
-6. **2020-е годы**: Python 3 стал доминирующей версией. Он используется в самых разных областях, от веб-разработки и научных вычислений до машинного обучения и искусственного интеллекта. Python продолжает развиваться и поддерживать высокую популярность благодаря простоте в обучении и мощным библиотекам.
-
-Таким образом, Python прошел долгий путь от языка, созданного для внутренних нужд, до одного из самых популярных языков программирования в мире.
+* **Wikipedia**
+* **Google** (unde a lucrat Guido van Rossum, creatorul Python)
+* **Yahoo!**, **CERN**, **NASA**
+* Servicii populare precum **PayPal**, **Instagram**, **Spotify**
 
 ---
-### 3. Интерпретируемые языки программирования: что это значит?
 
-Когда мы говорим, что Python — это интерпретируемый язык, это означает,
-что код на Python выполняется не через предварительную компиляцию в машинный код,
-как это происходит в языках типа C или C++, а непосредственно интерпретируется в
-процессе выполнения. Рассмотрим, как это работает.
+### 3. Limbaje de programare interpretate: ce înseamnă?
 
-1. **Исходный код**: Вы пишете программу на Python в текстовом файле с расширением `.py`.
-2. **Запуск интерпретатора**: Когда вы запускаете программу, интерпретатор Python читает и выполняет исходный код построчно.
-3. **Промежуточный байт-код**: В процессе выполнения код Python сначала преобразуется в байт-код — специальное промежуточное представление, которое является более компактным и может быть исполнено виртуальной машиной Python (PVM).
-4. **Выполнение**: Виртуальная машина Python (PVM) выполняет байт-код, взаимодействуя с операционной системой и ресурсами компьютера.
+Când spunem că Python este un limbaj interpretat, înseamnă că codul Python nu este compilat în prealabil în cod mașină, așa cum se întâmplă în limbaje precum C sau C++, ci este interpretat direct în timpul execuției. Să vedem cum funcționează:
 
-#### Как это отличается от компилируемых языков?
+1. **Cod sursă**: Scrieți programul Python într-un fișier text cu extensia `.py`.
+2. **Pornirea interpretului**: La rularea programului, interpretul Python citește și execută codul sursă linie cu linie.
+3. **Bytecode intermediar**: În timpul execuției, codul Python este mai întâi transformat în bytecode – o reprezentare intermediară compactă care poate fi executată de mașina virtuală Python (PVM).
+4. **Execuție**: Mașina virtuală Python (PVM) execută bytecode-ul, interacționând cu sistemul de operare și resursele calculatorului.
 
-В компилируемых языках, например, в C или C++, исходный код сначала компилируется в исполнимый файл, который затем запускается. В отличие от этого, интерпретируемые языки не требуют этого промежуточного шага: программа выполняется сразу, по мере чтения кода интерпретатором.
+#### Cum diferă de limbajele compilate?
 
-#### Преимущества интерпретируемых языков:
+În limbajele compilate, precum C sau C++, codul sursă este mai întâi compilat într-un fișier executabil, care apoi este rulat. În schimb, limbajele interpretate nu necesită acest pas intermediar: programul rulează imediat, pe măsură ce interpretul citește codul.
 
-- **Простота отладки**: Ошибки проще отслеживать, потому что код выполняется построчно, и можно сразу увидеть, где произошла ошибка.
-- **Гибкость**: Изменения в коде можно внедрять без необходимости компиляции, что делает процесс разработки более гибким.
-- **Портируемость**: Код Python может выполняться на различных операционных системах без необходимости перекомпиляции, что делает его более переносимым.
+#### Avantajele limbajelor interpretate:
 
-#### Недостатки интерпретируемых языков:
+* **Simplitate la depanare**: Erorile sunt mai ușor de identificat, deoarece codul rulează linie cu linie și se poate vedea imediat unde apare problema.
+* **Flexibilitate**: Modificările pot fi implementate fără recompilare, ceea ce face dezvoltarea mai flexibilă.
+* **Portabilitate**: Codul Python poate fi rulat pe diferite sisteme de operare fără recompilare.
 
-- **Производительность**: Из-за того, что код интерпретируется построчно в реальном времени, интерпретируемые языки часто медленнее компилируемых, поскольку весь процесс выполнения проходит через интерпретатор.
+#### Dezavantaje ale limbajelor interpretate:
 
-Таким образом, интерпретируемые языки предоставляют гибкость и удобство разработки, но могут иметь ограничение по скорости выполнения, что важно учитывать при выборе языка для решения конкретных задач.
+* **Performanță**: Deoarece codul este interpretat linie cu linie în timp real, limbajele interpretate sunt adesea mai lente decât cele compilate.
+
+Astfel, limbajele interpretate oferă flexibilitate și confort în dezvoltare, dar pot avea limitări de viteză, lucru important de luat în considerare atunci când alegeți un limbaj pentru anumite sarcini.
 
 ---
-### 4. Установка и настройка
 
-1. **Скачивание Python**
-   - Откройте официальный сайт Python: [https://www.python.org/](https://www.python.org/).
-   - На главной странице выберите раздел "Downloads" и найдите кнопку "Download Python X.X.X" (где X.X.X – номер последней стабильной версии, например, 3.10.5).
-   - Выберите версию для вашей операционной системы (Windows, macOS или Linux):
-     - **Windows**: На странице загрузок выберите установщик для Windows (`Windows Installer`) и скачайте файл.
-     - **macOS**: Выберите версию для macOS и скачайте `.pkg` файл.
-     - **Linux**: Python обычно предустановлен на Linux. Если нет, вы можете использовать команду `sudo apt install python3` для Ubuntu или `sudo dnf install python3` для Fedora.
+### 4. Instalare și configurare
 
-2. **Установка Python на Windows**
-   - Откройте скачанный установочный файл (.exe).
-   - В **первом окне установки** отметьте галочку "Add Python to PATH". Это очень важно: добавление Python в PATH позволяет запускать Python из командной строки.
-   - Нажмите "Install Now" и дождитесь окончания установки.
+1. **Descărcarea Python**
 
-3. **Установка Python на macOS**
-   - Запустите скачанный файл (.pkg) и следуйте указаниям мастера установки.
-   - Обычно на macOS Python добавляется в PATH автоматически.
+   * Deschideți site-ul oficial Python: [https://www.python.org/](https://www.python.org/).
+   * În pagina principală, accesați secțiunea "Downloads" și selectați "Download Python X.X.X" (unde X.X.X este ultima versiune stabilă, de exemplu 3.10.5).
+   * Alegeți versiunea pentru sistemul dvs. de operare (Windows, macOS sau Linux):
 
-4. **Проверка установки Python**
-   После завершения установки откройте командную строку:
-   - **На Windows**: откройте "Командную строку" (или "PowerShell").
-   - **На macOS и Linux**: откройте "Терминал".
+     * **Windows**: Selectați installer-ul pentru Windows (`Windows Installer`) și descărcați fișierul.
+     * **macOS**: Descărcați fișierul `.pkg`.
+     * **Linux**: Python este, de obicei, preinstalat. Dacă nu, folosiți comanda `sudo apt install python3` pentru Ubuntu sau `sudo dnf install python3` pentru Fedora.
 
-   В командной строке введите:
+2. **Instalarea Python pe Windows**
+
+   * Deschideți fișierul descărcat (.exe).
+   * În **prima fereastră a instalatorului**, bifați "Add Python to PATH". Este foarte important: adăugarea în PATH permite rularea Python din linia de comandă.
+   * Apăsați "Install Now" și așteptați finalizarea instalării.
+
+3. **Instalarea Python pe macOS**
+
+   * Rulați fișierul descărcat (.pkg) și urmați pașii asistentului de instalare.
+   * De obicei, Python se adaugă automat în PATH pe macOS.
+
+4. **Verificarea instalării Python**
+   După instalare, deschideți linia de comandă:
+
+   * **Windows**: deschideți "Command Prompt" sau "PowerShell".
+   * **macOS / Linux**: deschideți "Terminal".
+
+   Introduceți comanda:
+
    ```bash
    python --version
    ```
-   или, если это не сработало, попробуйте:
+
+   sau, dacă nu funcționează:
+
    ```bash
    python3 --version
    ```
-   Вы должны увидеть версию Python, например, `Python 3.10.5`. Это подтверждает, что Python установлен и готов к использованию.
 
-5. **Установка IDE или редактора кода**
-   Для удобства работы с Python выберите и установите подходящий редактор:
-   - **VS Code**: Легкий, бесплатный редактор с поддержкой плагинов для Python. Загрузите его с [https://code.visualstudio.com/](https://code.visualstudio.com/).
-   - **PyCharm**: Полнофункциональная IDE для Python с функциями автодополнения, отладки и удобного интерфейса. Доступен бесплатный Community Edition: [https://www.jetbrains.com/pycharm/download/](https://www.jetbrains.com/pycharm/download/).\
-   
-#### [Альтернатива](https://jupyter.org)
-6. **Проверка работы Python через IDE**
-   - Откройте вашу IDE и создайте новый Python-файл (например, `hello.py`).
-   - Напишите простой код, чтобы убедиться, что всё работает:
+   Ar trebui să vedeți versiunea Python, de exemplu `Python 3.10.5`. Aceasta confirmă că Python este instalat și gata de utilizare.
+Вот перевод вашего текста на румынский язык:
+
+---
+
+5. **Instalarea unui IDE sau editor de cod**
+   Pentru confortul lucrului cu Python, alegeți și instalați un editor potrivit:
+
+* **VS Code**: Editor ușor, gratuit, cu suport pentru plugin-uri Python. Descărcați-l de la [https://code.visualstudio.com/](https://code.visualstudio.com/).
+* **PyCharm**: IDE complet pentru Python, cu funcții de autocompletare, depanare și interfață intuitivă. Există ediția gratuită Community Edition: [https://www.jetbrains.com/pycharm/download/](https://www.jetbrains.com/pycharm/download/).
+
+#### [Alternativă](https://jupyter.org)
+
+6. **Verificarea funcționării Python prin IDE**
+
+* Deschideți IDE-ul și creați un fișier Python nou (de exemplu, `hello.py`).
+* Scrieți un cod simplu pentru a verifica funcționarea:
+
 ```python
 print("Hello, World!")
 ```
-   - Запустите скрипт (обычно клавиша `F5` или специальная кнопка запуска), и убедитесь, что в терминале выводится текст `Hello, World!`.
 
-Теперь у вас установлен Python, и вы можете начать изучение и написание кода!
-**Запуск кода**:
-- В терминале: используйте команду `python` или `python3` в зависимости от версии.
-- Через IDE (например, PyCharm, VS Code, Jupyter Notebook).
+* Rulați scriptul (de obicei cu tasta `F5` sau cu butonul de run), și verificați dacă în terminal apare textul `Hello, World!`.
+
+Acum Python este instalat și puteți începe să învățați și să scrieți cod!
+
+**Rularea codului**:
+
+* În terminal: folosiți comanda `python` sau `python3` în funcție de versiune.
+* Prin IDE (de exemplu, PyCharm, VS Code, Jupyter Notebook).
 
 ---
-### 5. Введение в стили написания идентификаторов
-Стили написания идентификаторов — это соглашения, которые помогают сделать код более читаемым и структурированным. Самые популярные из них: **CamelCase** и **snake_case**. Они используются для именования переменных, функций, классов и помогают легко различать части кода по их назначению.
+
+### 5. Introducere în stilurile de scriere a identificatorilor
+
+Stilurile de scriere a identificatorilor sunt convenții care ajută la creșterea lizibilității și structurării codului. Cele mai populare sunt **CamelCase** și **snake_case**. Ele se folosesc pentru numirea variabilelor, funcțiilor și claselor și ajută la diferențierea ușoară a părților codului după rolul lor.
+
 ![Python for everything](../images/lecture_1/img_1.png)
 
 ---
-### 6. Отступы в Python
 
-Python использует **отступы** для определения структуры кода. В отличие от многих других языков, где блоки кода заключаются в фигурные скобки `{}`, Python определяет блоки по уровню отступов, что делает код более читаемым. 
+### 6. Indentarea în Python
 
-#### Основные правила:
+Python folosește **indentarea** pentru a defini structura codului. Spre deosebire de alte limbaje, unde blocurile de cod sunt încadrate în acolade `{}`, în Python blocurile sunt definite prin nivelul de indentare, ceea ce face codul mai lizibil.
 
-- **Размер отступа**: стандартный размер отступа составляет **4 пробела**, но важно быть последовательным. Использование табуляций (`\t`) вместо пробелов может вызвать ошибки.
-- **Структурирование блоков**: все строки в одном блоке должны иметь одинаковый уровень отступа. Нарушение этого правила приведет к ошибке `IndentationError`.
-- **Циклы, условия, функции**: все тела функций, циклов и условий должны быть на один уровень отступа правее, чем сама конструкция.
+#### Reguli principale:
 
-**Пример:**
+* **Dimensiunea indentării**: indentarea standard este de **4 spații**, dar este important să fiți consecvent. Utilizarea tab-urilor (`\t`) poate cauza erori.
+* **Structurarea blocurilor**: toate liniile dintr-un bloc trebuie să aibă același nivel de indentare. Încălcarea acestui lucru va genera eroarea `IndentationError`.
+* **Cicluri, condiții, funcții**: toate instrucțiunile din corpul funcțiilor, buclelor și condițiilor trebuie să fie cu un nivel de indentare mai mult decât linia care le definește.
+
+**Exemplu:**
 
 ```python
 def my_function():
     if True:
-        print("Внутри условия")  # 4 пробела перед этой строкой
+        print("În interiorul condiției")  # 4 spații înaintea acestei linii
     for i in range(3):
-        print(i)  # тоже 4 пробела
+        print(i)  # tot 4 spații
 ```
 
-Последовательное использование отступов улучшает читаемость кода и является важной частью стиля программирования в Python.
+Respectarea indentării îmbunătățește lizibilitatea codului și este o parte esențială a stilului Python.
 
 ---
-### 7. Комментарии в Python
 
-Комментарии в Python используются для того, чтобы пояснить код, улучшить его читаемость или временно отключить определенные строки. Они не выполняются интерпретатором и помогают разработчикам лучше понимать логику и функциональность программы.
+### 7. Comentariile în Python
 
-#### Однострочные комментарии
+Comentariile în Python sunt folosite pentru a explica codul, a-i crește lizibilitatea sau a dezactiva temporar anumite linii. Ele nu sunt executate de interpret și ajută dezvoltatorii să înțeleagă mai bine logica programului.
 
-Для создания однострочного комментария в Python используется символ `#`. Все, что написано после него на строке, будет проигнорировано интерпретатором.
+#### Comentarii pe o singură linie
 
-```python
-# Это однострочный комментарий
-print("Hello, World!")  # Комментарий после кода
-```
-
-#### Многострочные комментарии
-
-В Python нет специального синтаксиса для многострочных комментариев, но для этого часто используют несколько строк с `#`.
+Se foloseste simbolul `#`. Tot ce este după acesta pe linie va fi ignorat de interpret.
 
 ```python
-# Это первая строка комментария
-# Это вторая строка комментария
-# Это третья строка комментария
+# Acesta este un comentariu pe o linie
+print("Hello, World!")  # Comentariu după cod
 ```
 
-Также многострочные строки в кавычках (`''' ... '''` или `""" ... """`) могут использоваться для многострочных комментариев. Обычно они применяются в качестве **docstring** — строк документации.
+#### Comentarii pe mai multe linii
+
+Python nu are un sintax special pentru comentarii multi-linie, dar se folosesc mai multe linii cu `#`:
+
+```python
+# Prima linie de comentariu
+# A doua linie de comentariu
+# A treia linie de comentariu
+```
+
+De asemenea, șirurile multi-linie în ghilimele (`''' ... '''` sau `""" ... """`) pot fi folosite pentru comentarii multi-linie, de obicei ca **docstring** – șiruri de documentație.
 
 ```python
 """
-Это многострочный комментарий,
-который может использоваться в качестве docstring.
+Acesta este un comentariu multi-linie,
+care poate fi folosit ca docstring.
 """
 def my_function():
-    """Эта строка является docstring и описывает функцию."""
+    """Acest docstring descrie funcția."""
     pass
 ```
 
-#### Основные принципы использования комментариев
+#### Principii de bază pentru comentarii:
 
-- **Будьте краткими и точными**: комментарии должны пояснять суть кода, а не дублировать его.
-- **Объясняйте сложную логику**: используйте комментарии там, где код может быть труден для понимания.
-- **Не переусердствуйте**: не комментируйте очевидные действия, чтобы код оставался чистым.
+* **Fiți concis și clar**: comentariile trebuie să explice esența codului, nu să-l repete.
+* **Explicați logica complexă**: folosiți comentarii acolo unde codul poate fi greu de înțeles.
+* **Nu exagerați**: nu comentați acțiuni evidente, pentru a menține codul curat.
 
-Комментарии делают код понятнее и помогают другим разработчикам быстрее разобраться в вашей логике.
+Comentariile fac codul mai ușor de înțeles și ajută alți dezvoltatori să înțeleagă rapid logica.
 
 ---
-### 8. Переменные
-- Переменные являются **контейнерами** для хранения значений
-- В отличие от других языков программирования, в Python нет ключегого слова для объявления переменной
-- В Python для создания переменной просто присвойте значение:
+
+### 8. Variabile
+
+* Variabilele sunt **containere** pentru stocarea valorilor.
+* Spre deosebire de alte limbaje, în Python nu există cuvânt cheie pentru declararea unei variabile.
+* Pentru a crea o variabilă, pur și simplu atribuiți o valoare:
+
 ```python
-# Переменные типа «string» определяются при помощи кавычек
+# Variabile de tip "string" se definesc cu ghilimele
 nmbr1, name = 77.5, "Amber"
-print(nmbr1) #77.5
-print(name) #"Amber"
+print(nmbr1)  # 77.5
+print(name)   # "Amber"
 
-# Или же можно присвоить одно и то же значение нескольким переменным в одной строке
+# Sau putem atribui aceeași valoare mai multor variabile într-o linie
 nmbr1 = nmbr2 = 77.5
-print(nmbr1) #77.5
-print(nmbr2) #77.5
+print(nmbr1)  # 77.5
+print(nmbr2)  # 77.5
 ```
 
-- Переменные не нужно объявлять какого-то конкретного типа - они могут даже изменить тип после того, как уже были установлены
-- Интерпретатор производит парсинг значения и определяет какого типа является переменная, которой было присвоенно данное значение
-- Для присвоения значения переменной используется оператор «присвоения» - символ «равно»\
-*Названия переменных чувствительны к регистру(age и Age - разные переменные) и не должны начинаться с цифры(либо с буквы, либо с символа подчеркивания), но содержать внутри себя цифры может.*
+* Variabilele nu trebuie să fie de un tip fix – ele pot schimba tipul după ce au fost inițializate.
+* Interpretul determină tipul variabilei în momentul atribuirii.
+* Operatorul de atribuire este simbolul egal (`=`).
+* **Numele variabilelor sunt case-sensitive** (`age` și `Age` sunt variabile diferite) și **nu trebuie să înceapă cu cifre** (trebuie să înceapă cu literă sau underscore `_`), dar pot conține cifre în interior.
+
+Вот перевод вашего текста на румынский язык:
 
 ---
+### 9. Tipurile de bază de date în Python
 
-### 9.  Основные типы данных в Python
-Python — язык с **динамической типизацией**, где тип данных переменной определяется автоматически при присвоении значения. Python обладает как основными (базовыми) типами данных, так и более сложными структурами данных, которые позволяют эффективно работать с различными наборами данных. 
+Python este un limbaj cu **tipizare dinamică**, unde tipul unei variabile este determinat automat în momentul atribuirii valorii. Python dispune atât de tipuri de bază, cât și de structuri de date mai complexe, care permit lucrul eficient cu diferite seturi de date.
+
 ![img.png](../images/lecture_1/img_3.png)
-## Часть 1
 
-1. **None**  
-   - **Описание**: Экземпляр типа объекта `NoneType`, который представляет собой особую переменную, не имеющую целевого значения.
-   - **Пример**:
+## Partea 1
+
+1. **None**
+
+   * **Descriere**: Instanță a tipului de obiect `NoneType`, care reprezintă o variabilă specială fără valoare efectivă.
+   * **Exemplu**:
+
 ```python
-     x = None
-     print(type(x))  # <class 'NoneType'>
-```
-Можно использовать функцию type(), чтобы узнать, какому классу принадлежит переменная или значение, и функцию isinstance(), чтобы проверить, принадлежит ли объект определенному классу
-2. **bool**  
-   - **Описание**: Булевы значения, которые могут быть равны либо `True`, либо `False`.
-   - **Пример**:
-```python
-     is_active = True
-     is_completed = False
-     print(type(is_active))  # <class 'bool'>
+x = None
+print(type(x))  # <class 'NoneType'>
 ```
 
-3. **int**  
-   - **Описание**: Тип данных для представления целых чисел, как положительных, так и отрицательных.
-   - Целые числа могут быть любой длины, они ограничены только доступной памятью устройства
-   - **Пример**:
+Se poate folosi funcția `type()` pentru a afla clasa unei variabile sau valori, și `isinstance()` pentru a verifica dacă un obiect aparține unei anumite clase.
+
+2. **bool**
+
+   * **Descriere**: Valori booleene, care pot fi `True` sau `False`.
+   * **Exemplu**:
+
 ```python
-     age = 25
-     temperature = -5
-     print(type(age))  # <class 'int'>
+is_active = True
+is_completed = False
+print(type(is_active))  # <class 'bool'>
 ```
 
-4. **float**  
-   - **Описание**: Тип данных для чисел с плавающей точкой, которые могут иметь десятичную часть.
-   - Числа с плавающей запятой (вещественные числа) с точностью до 15 десятичных знаков.
-   - **Пример**:
+3. **int**
+
+   * **Descriere**: Tip de date pentru numere întregi, pozitive sau negative.
+   * Numerele întregi pot avea orice lungime, limitate doar de memoria disponibilă a dispozitivului.
+   * **Exemplu**:
+
 ```python
-     pi = 3.14159
-     price = 99.99
-     print(type(pi))  # <class 'float'>
+age = 25
+temperature = -5
+print(type(age))  # <class 'int'>
 ```
 
-5. **complex**  
-   - **Описание**: Тип данных для представления комплексных чисел, состоящих из действительной и мнимой части.
-   - **Пример**:
+4. **float**
+
+   * **Descriere**: Tip de date pentru numere cu virgulă mobilă, care pot avea parte zecimală.
+   * Numerele reale au precizie până la 15 zecimale.
+   * **Exemplu**:
+
 ```python
-     complex_num = 3 + 4j
-     print(isinstance(complex_num, complex))  # True
+pi = 3.14159
+price = 99.99
+print(type(pi))  # <class 'float'>
 ```
 
-6. **str**  
-   - **Описание**: Тип данных для хранения текстовой информации, строк, последовательностей символов.
-   - **Пример**:
+5. **complex**
+
+   * **Descriere**: Tip de date pentru numere complexe, cu parte reală și imaginară.
+   * **Exemplu**:
+
 ```python
-     name = "Alice"
-     greeting = 'Hello, world!'
-     print(type(name))  # <class 'str'>
+complex_num = 3 + 4j
+print(isinstance(complex_num, complex))  # True
+```
+
+6. **str**
+
+   * **Descriere**: Tip de date pentru stocarea informației textuale, șiruri de caractere.
+   * **Exemplu**:
+
+```python
+name = "Alice"
+greeting = 'Hello, world!'
+print(type(name))  # <class 'str'>
 ```
 ---
-### 10. Конструкторы преобразования типов в Python
 
-В Python для явного преобразования (или приведения) данных из одного типа в другой используются специальные конструкторы. Они позволяют изменять тип данных переменной или объекта, например, из строки в число или из числа в строку. Вот основные конструкторы преобразования типов:
+### 10. Constructori pentru conversia tipurilor în Python
 
-1. **`int()`** — преобразует данные в целое число:
-   ```python
-   a = "10"
-   b = int(a)  # Преобразует строку в целое число
-   print(b)  # Выведет 10
-   ```
+În Python, pentru conversia explicită (sau schimbarea) tipurilor de date se folosesc constructori speciali. Aceștia permit transformarea tipului unei variabile sau obiect, de exemplu din șir în număr sau invers.
 
-2. **`float()`** — преобразует данные в число с плавающей запятой:
-   ```python
-   a = "10.5"
-   b = float(a)  # Преобразует строку в число с плавающей запятой
-   print(b)  # Выведет 10.5
-   ```
+Principalii constructori sunt:
 
-3. **`str()`** — преобразует данные в строку:
-   ```python
-   a = 100
-   b = str(a)  # Преобразует целое число в строку
-   print(b)  # Выведет "100"
-   ```
+1. **`int()`** — convertește datele în număr întreg:
 
-4. **`complex()`** — преобразует в комплексное число:
-   ```python
-   a = 1, 2
-   b = complex(*a)  # Преобразует в комплексное число
-   print(b)  # Выведет (1+2j)
-   ```
-Изменение типа данных необходимо для корректной работы с различными операциями, которые требуют определенных типов данных. В Python, как и в других языках программирования, различные типы данных (например, целые числа, строки, списки и т. д.) имеют свои особенности, и не все операции могут быть применены к различным типам. Пример с операцией сложения иллюстрирует, почему важно контролировать типы данных.
+```python
+a = "10"
+b = int(a)  # Convertim șirul în număr întreg
+print(b)  # 10
+```
 
-**Пример с ошибкой:**
+2. **`float()`** — convertește datele în număr real:
+
+```python
+a = "10.5"
+b = float(a)  # Convertim șirul în număr real
+print(b)  # 10.5
+```
+
+3. **`str()`** — convertește datele în șir:
+
+```python
+a = 100
+b = str(a)  # Convertim numărul întreg în șir
+print(b)  # "100"
+```
+
+4. **`complex()`** — convertește în număr complex:
+
+```python
+a = 1, 2
+b = complex(*a)  # Convertim în număr complex
+print(b)  # (1+2j)
+```
+
+Schimbarea tipurilor de date este necesară pentru a lucra corect cu diferite operații, care cer tipuri compatibile. În Python, ca și în alte limbaje, diversele tipuri (int, string, list etc.) au reguli specifice, iar unele operații nu pot fi aplicate între tipuri diferite.
+
+**Exemplu de eroare:**
 
 ```python
 nmbr1 = 22
@@ -331,9 +373,9 @@ nmbr2 = "33"
 print(nmbr1 + nmbr2)  # TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
 
-В этом примере пытаются сложить переменную типа `int` (`nmbr1 = 22`) и переменную типа `str` (`nmbr2 = "33"`). Операция сложения в Python поддерживает только совместимые типы данных. Например, нельзя сложить строку и число, потому что Python не знает, как соединить их (в данном случае, это ошибка типа `TypeError`). Поэтому важно, чтобы типы данных были совместимыми для нужной операции.
+Aici se încearcă adunarea unui `int` (`nmbr1 = 22`) cu un `str` (`nmbr2 = "33"`), ceea ce nu este permis.
 
-**Пример с преобразованием типов:**
+**Exemplu corect cu conversia tipului:**
 
 ```python
 nmbr1 = 22
@@ -341,20 +383,18 @@ nmbr2 = int("33")
 print(nmbr1 + nmbr2)  # 55
 ```
 
-Здесь используется функция `int()`, чтобы преобразовать строку `"33"` в целое число. После этого оба операнда имеют тип `int`, и операция сложения выполняется успешно. Это демонстрирует важность приведения типов данных для выполнения математических операций.
+Funcția `int()` transformă șirul `"33"` în număr întreg, astfel ambii operanzi sunt compatibili și adunarea funcționează.
 
-### Почему важно изменять типы данных?
-1. **Сложение/вычитание/умножение:** Некоторые операции, такие как математические, могут быть выполнены только для чисел, и попытка сложить строку с числом вызовет ошибку.
-   
-2. **Строковые операции:** Если вам нужно объединить числа как строки (например, получить строковое представление числа для вывода), можно преобразовать числа в строки.
+---
 
-3. **Обработка данных:** При получении данных из различных источников (например, из текстовых файлов или пользовательского ввода), типы данных могут быть строковыми, и необходимо их привести к нужному типу для дальнейшей обработки.
+### De ce este important să schimbăm tipurile de date?
 
-4. **Гибкость кода:** Использование конструкций типа `int()`, `float()`, `str()`, и других позволяет работать с различными типами данных в зависимости от контекста задачи и приводит к более универсальному и гибкому коду.
+1. **Operații matematice**: Adunarea, scăderea, multiplicarea necesită tipuri numerice. Încercarea de a aduna un șir cu un număr generează eroare.
+2. **Operații pe șiruri**: Dacă dorim să combinăm valori ca șiruri, numerele trebuie transformate în șiruri.
+3. **Procesarea datelor**: La preluarea datelor din surse externe (fișiere text, input utilizator), tipurile pot fi șiruri și trebuie convertite pentru prelucrare corectă.
+4. **Flexibilitatea codului**: Folosind `int()`, `float()`, `str()` și altele putem manipula datele conform cerințelor și scrie cod mai flexibil și universal.
 
-**Пример с конкатенацией строк:**
-
-Если нужно объединить числа как строки, то можно преобразовать их в строки:
+**Exemplu de concatenare a șirurilor:**
 
 ```python
 nmbr1 = 22
@@ -362,27 +402,33 @@ nmbr2 = "33"
 print(str(nmbr1) + nmbr2)  # "2233"
 ```
 
-Здесь функция `str()` преобразует `nmbr1` в строку, и теперь оба значения могут быть успешно объединены в одну строку.
+Funcția `str()` transformă `nmbr1` în șir, iar acum ambele valori pot fi combinate.
 
-**Обратите внимание:**
-- При преобразовании типов могут возникать ошибки, если данные не совместимы с целевым типом. Например, попытка преобразовать строку, не содержащую числовых символов, в целое число вызовет ошибку.
-- Важно учитывать, что преобразование типов в Python не всегда возможно и требует проверки или обработки ошибок.
+**Notă:**
+
+* Conversia poate genera erori dacă datele nu sunt compatibile cu tipul țintă (de exemplu, încercarea de a converti un șir ne-numeric în `int`).
+* Este important să verificăm sau să gestionăm erorile la conversia tipurilor în Python.
+
 ---
-### 11. Операторы
-Вот обзор различных операторов в Python, которые используются для выполнения различных типов операций:
 
-#### 1. **Арифметические операторы**
-Арифметические операторы выполняют стандартные математические операции.
+### 11. Operatori
 
-- **`+`**: Сложение
-- **`-`**: Вычитание
-- **`*`**: Умножение
-- **`/`**: Деление (результат — число с плавающей точкой)
-- **`//`**: Целочисленное деление (результат — целое число)
-- **`%`**: Остаток от деления
-- **`**`**: Возведение в степень
+Iată o prezentare a diferitelor tipuri de operatori în Python, folosiți pentru efectuarea diferitelor operații:
 
-Пример:
+#### 1. **Operatori aritmetici**
+
+Operatorii aritmetici efectuează operații matematice standard:
+
+* **`+`**: Adunare
+* **`-`**: Scădere
+* **`*`**: Înmulțire
+* **`/`**: Împărțire (rezultatul este un număr real)
+* **`//`**: Împărțire întreagă (rezultatul este un număr întreg)
+* **`%`**: Restul împărțirii
+* **`**`**: Ridicare la putere
+
+**Exemplu:**
+
 ```python
 a = 10
 b = 3
@@ -391,36 +437,40 @@ print(a // b)  # 3
 print(a ** b)  # 1000
 ```
 
-#### 2. **Операторы присваивания**
-Операторы присваивания используются для присваивания значений переменным.
+#### 2. **Operatori de atribuire**
 
-- **`=`**: Присваивание
-- **`+=`**: Сложение и присваивание (equivalent to `a = a + b`)
-- **`-=`**: Вычитание и присваивание
-- **`*=`**: Умножение и присваивание
-- **`/=`**: Деление и присваивание
-- **`//=`**: Целочисленное деление и присваивание
-- **`%=`**: Остаток от деления и присваивание
-- **`**=`**: Возведение в степень и присваивание
+Operatorii de atribuire sunt folosiți pentru a atribui valori variabilelor:
 
-Пример:
+* **`=`**: Atribuire
+* **`+=`**: Adunare și atribuire (`a += b` este echivalent cu `a = a + b`)
+* **`-=`**: Scădere și atribuire
+* **`*=`**: Înmulțire și atribuire
+* **`/=`**: Împărțire și atribuire
+* **`//=`**: Împărțire întreagă și atribuire
+* **`%=`**: Rest și atribuire
+* **`**=`**: Ridicare la putere și atribuire
+
+**Exemplu:**
+
 ```python
 a = 10
 a += 5  # a = a + 5
 print(a)  # 15
 ```
 
-#### 3. **Операторы сравнения**
-Операторы сравнения используются для сравнения значений.
+#### 3. **Operatori de comparație**
 
-- **`==`**: Равенство
-- **`!=`**: Неравенство
-- **`>`**: Больше
-- **`<`**: Меньше
-- **`>=`**: Больше или равно
-- **`<=`**: Меньше или равно
+Operatorii de comparație sunt folosiți pentru a compara valori:
 
-Пример:
+* **`==`**: Egalitate
+* **`!=`**: Diferit
+* **`>`**: Mai mare
+* **`<`**: Mai mic
+* **`>=`**: Mai mare sau egal
+* **`<=`**: Mai mic sau egal
+
+**Exemplu:**
+
 ```python
 a = 10
 b = 5
@@ -428,39 +478,45 @@ print(a == b)  # False
 print(a > b)   # True
 ```
 
-#### 4. **Идентификационные операторы**
-Идентификационные операторы используются для проверки, ссылаются ли два объекта на один и тот же объект в памяти.
+#### 4. **Operatori de identitate**
 
-- **`is`**: Проверка на идентичность
-- **`is not`**: Проверка на отсутствие идентичности
+Operatorii de identitate verifică dacă două obiecte se referă la același obiect în memorie:
 
-Пример:
+* **`is`**: Verifică identitatea
+* **`is not`**: Verifică lipsa identității
+
+**Exemplu:**
+
 ```python
 a = [1, 2, 3]
 b = a
 print(a is b)  # True
 ```
 
-#### 5. **Операторы членства (принадлежности)**
-Операторы членства проверяют, принадлежит ли объект коллекции.
+#### 5. **Operatori de apartenență (membership)**
 
-- **`in`**: Проверка на наличие элемента в коллекции
-- **`not in`**: Проверка на отсутствие элемента в коллекции
+Operatorii de apartenență verifică dacă un obiect face parte dintr-o colecție:
 
-Пример:
+* **`in`**: Verifică dacă elementul este în colecție
+* **`not in`**: Verifică dacă elementul nu este în colecție
+
+**Exemplu:**
+
 ```python
 a = [1, 2, 3]
 print(2 in a)  # True
 print(4 not in a)  # True
 ```
 
-#### 6. **Операторы для работы со строками**
-В Python строки поддерживают ряд операций, таких как:
+#### 6. **Operatori pentru lucrul cu șiruri de caractere**
 
-- **`+`**: Конкатенация (сцепление строк)
-- **`*`**: Повторение строки
+În Python, șirurile permit anumite operații:
 
-Пример:
+* **`+`**: Concatenare
+* **`*`**: Repetarea șirului
+
+**Exemplu:**
+
 ```python
 a = "Hello"
 b = " World"
@@ -468,53 +524,63 @@ print(a + b)  # "Hello World"
 print(a * 3)  # "HelloHelloHello"
 ```
 
-#### 7. **Битовые операторы**
-Битовые операторы используются для работы с целыми числами на уровне битов.
+#### 7. **Operatori pe biți (bitwise)**
 
-- **`&`**: Побитовое И
-- **`|`**: Побитовое ИЛИ
-- **`^`**: Побитовое исключающее ИЛИ
-- **`~`**: Побитовое НЕ
-- **`<<`**: Побитовый сдвиг влево
-- **`>>`**: Побитовый сдвиг вправо
+Operatorii pe biți operează la nivel de biți pentru numere întregi:
 
-Пример:
+* **`&`**: AND pe biți
+* **`|`**: OR pe biți
+* **`^`**: XOR pe biți
+* **`~`**: NOT pe biți
+* **`<<`**: Shift la stânga
+* **`>>`**: Shift la dreapta
+
+**Exemplu:**
+
 ```python
-a = 5  # 101 в двоичной системе
-b = 3  # 011 в двоичной системе
+a = 5  # 101 în binar
+b = 3  # 011 în binar
 print(a & b)  # 1 (101 & 011 = 001)
 print(a | b)  # 7 (101 | 011 = 111)
 ```
 
-Эти операторы позволяют эффективно выполнять различные операции в Python и работать с данными на разных уровнях.
-#### 8. Логические операторы в Python
+Acești operatori permit efectuarea eficientă a diferitelor operații și manipularea datelor la nivel de biți.
 
-В Python для работы с логическими выражениями используются следующие операторы:
-**1. Оператор **AND****
-- **Описание**: Возвращает `True`, если оба выражения истинны, и `False`, если хотя бы одно из них ложно.
-- **Пример**:
+#### 8. **Operatori logici în Python**
+
+Operatorii logici sunt folosiți pentru evaluarea expresiilor logice:
+
+**1. Operatorul AND**
+
+* **Descriere**: Returnează `True` dacă ambele expresii sunt adevărate; altfel returnează `False`.
+* **Exemplu:**
+
 ```python
-  a = 5
-  b = 10
-  c = 15
-  print(a < b and b < c)  # вернет True, оба условия выполнены
-  print(a < b and b > c)  # вернет False, одно условие не выполнено
+a = 5
+b = 10
+c = 15
+print(a < b and b < c)  # True
+print(a < b and b > c)  # False
 ```
 
-**2. Оператор **OR****
-- **Описание**: Возвращает `True`, если хотя бы одно из выражений истинно, и `False`, если оба выражения ложны.
-- **Пример**:
+**2. Operatorul OR**
+
+* **Descriere**: Returnează `True` dacă cel puțin una dintre expresii este adevărată; altfel returnează `False`.
+* **Exemplu:**
+
 ```python
 age = 17
-print(age < 18 or age > 60)  # вернет True, первое условие выполнено
-print(age < 16 or age > 60)  # вернет False, ни одно условие не выполнено
+print(age < 18 or age > 60)  # True
+print(age < 16 or age > 60)  # False
 ```
 
-**3. Оператор **NOT****
-- **Описание**: Инвертирует логическое выражение. Если выражение истинно, результат будет `False`, и наоборот.
-- **Пример**:
+**3. Operatorul NOT**
+
+* **Descriere**: Inversează expresia logică.
+* **Exemplu:**
+
 ```python
-  is_admin = True
-  print(not is_admin)  # вернет False
+is_admin = True
+print(not is_admin)  # False
 ```
 

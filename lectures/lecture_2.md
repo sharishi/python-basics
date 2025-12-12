@@ -1,231 +1,249 @@
-# Строки, списки и множества в Python
+ # Șiruri, liste și mulțimi în Python
 
 ---
-### 1. Что такое индексирование?
 
-**Индексирование** — это способ доступа к отдельным элементам последовательности (например, строк, списков или кортежей) с помощью их позиции, которая называется индексом.  
+### 1. Ce este indexarea?
 
-- **Индексы в Python начинаются с 0** для первого элемента.  
-- **Отрицательные индексы** используются для доступа к элементам с конца последовательности.  
-- Индексирование позволяет извлекать, изменять (в случае изменяемых типов) или использовать элементы в различных операциях.  
+**Indexarea** este modul de acces la elementele individuale ale unei secvențe (cum ar fi șiruri, liste sau tuple) prin poziția lor, numită **index**.
 
-**Общая формула для индексирования:**  
+* **Indexii în Python încep de la 0** pentru primul element.
+* **Indexii negativi** permit accesul la elemente de la sfârșitul secvenței.
+* Indexarea permite extragerea, modificarea (pentru tipurile mutabile) sau utilizarea elementelor în diverse operații.
+
+**Formula generală pentru indexare:**
+
 ```python
-{имя_последовательности}[индекс]
+{nume_secventa}[index]
 ```
 
-Индексирование доступно для:  
-- **Строк:** последовательности символов.  
-- **Списков:** последовательности элементов любых типов.  
-- **Кортежей:** неизменяемых последовательностей элементов.  
+Indexarea este disponibilă pentru:
 
+* **Șiruri (strings)**: secvențe de caractere.
+* **Liste (lists)**: secvențe de elemente de orice tip.
+* **Tuple**: secvențe imutabile de elemente.
 
-#### **Индексирование строк**  
-Строки в Python — это последовательности символов, где каждому символу соответствует порядковый номер, называемый индексом. Индексация позволяет обращаться к символам строки.
+#### **Indexarea șirurilor**
+
+Șirurile în Python sunt secvențe de caractere, iar fiecărui caracter îi corespunde un index. Indexarea permite accesul la caracterele unui șir.
 
 ```python
 s = "Python"
 
-# Положительные индексы
-print(s[0])  # 'P' — первый символ
-print(s[3])  # 'h' — четвертый символ
+# Indexi pozitivi
+print(s[0])  # 'P' — primul caracter
+print(s[3])  # 'h' — al patrulea caracter
 
-# Отрицательные индексы
-print(s[-1])  # 'n' — последний символ
-print(s[-3])  # 'h' — третий символ с конца
+# Indexi negativi
+print(s[-1])  # 'n' — ultimul caracter
+print(s[-3])  # 'h' — al treilea caracter de la sfârșit
 ```
 
-Если попытаться обратиться к индексу, выходящему за пределы строки, Python вызовет ошибку:
+Dacă încercăm să accesăm un index în afara șirului, Python va genera o eroare:
+
 ```python
 print(s[10])  # IndexError: string index out of range
 ```
 
 ---
 
-#### **Индексирование списков**  
-Списки также поддерживают индексацию, позволяя обращаться к элементам по их порядковому номеру.  
-- Индексация работает аналогично строкам.  
-- Элементы могут быть любого типа, включая другие списки.  
+#### **Indexarea listelor**
 
-**Пример работы с индексами в списках:**
+Listele suportă, de asemenea, indexarea, permițând accesul la elemente prin poziția lor.
+
+* Funcționează similar cu șirurile.
+* Elementele pot fi de orice tip, inclusiv alte liste.
+
+**Exemplu:**
+
 ```python
 lst = [10, 20, 30, 40, 50]
 
-# Положительные индексы
-print(lst[0])  # 10 — первый элемент
-print(lst[3])  # 40 — четвертый элемент
+# Indexi pozitivi
+print(lst[0])  # 10 — primul element
+print(lst[3])  # 40 — al patrulea element
 
-# Отрицательные индексы
-print(lst[-1])  # 50 — последний элемент
-print(lst[-3])  # 30 — третий элемент с конца
+# Indexi negativi
+print(lst[-1])  # 50 — ultimul element
+print(lst[-3])  # 30 — al treilea element de la sfârșit
 ```
 
-Для вложенных списков индексация может быть многоуровневой:
+Pentru liste imbricate, indexarea poate fi multiplă:
+
 ```python
 nested_lst = [1, [2, 3, 4], 5]
-print(nested_lst[1])  # [2, 3, 4] — второй элемент (вложенный список)
-print(nested_lst[1][2])  # 4 — третий элемент вложенного списка
+print(nested_lst[1])      # [2, 3, 4] — al doilea element (listă imbricată)
+print(nested_lst[1][2])   # 4 — al treilea element din lista imbricată
 ```
 
-Как и со строками, попытка обратиться к несуществующему индексу вызовет ошибку:
+Ca și în cazul șirurilor, încercarea de a accesa un index inexistent va genera o eroare:
+
 ```python
 print(lst[10])  # IndexError: list index out of range
 ```
+---
 
---- 
+### 2. Mutabilitate și imutabilitate în Python
 
-### 2. Изменяемость и неизменяемость в Python
+**Mutabilitatea (mutability)** și **imutabilitatea (immutability)** sunt proprietăți ale obiectelor care definesc dacă conținutul lor poate fi modificat după creare.
 
-**Изменяемость (mutability)** и **неизменяемость (immutability)** — это свойства объектов, определяющие, можно ли изменять их содержимое после создания.
+#### **Obiecte mutabile (mutable)**
 
+Obiectele mutabile pot fi modificate după creare. Modificarea conținutului nu schimbă referința obiectului.
 
+Exemple:
 
-#### **Изменяемые объекты (mutable)**  
-Изменяемые объекты — это объекты, которые можно модифицировать после создания. Это означает, что их содержимое (данные) может изменяться без изменения ссылки на объект.  
+* **Liste (`list`)**
+* **Mulțimi (`set`)**
+* **Dicționare (`dict`)**
 
-Примеры изменяемых объектов:
-- **Списки (`list`)**
-- **Множества (`set`)**
-- **Словари (`dict`)**
+**Exemplu:**
 
-Пример работы с изменяемыми объектами:
 ```python
 lst = [1, 2, 3]
-lst[0] = 10  # Изменяем первый элемент
+lst[0] = 10  # Modificăm primul element
 print(lst)  # [10, 2, 3]
 
-# Добавление нового элемента
+# Adăugarea unui element nou
 lst.append(4)
 print(lst)  # [10, 2, 3, 4]
 ```
-
 ---
+#### **Obiecte imutabile (immutable)**
 
-#### **Неизменяемые объекты (immutable)**  
-Неизменяемые объекты — это объекты, которые нельзя изменить после создания. Любая попытка изменения создаёт новый объект в памяти.  
+Obiectele imutabile nu pot fi modificate după creare. Orice modificare creează un obiect nou în memorie.
 
-Примеры неизменяемых объектов:
-- **Числа (`int`, `float`, `complex`)**
-- **Строки (`str`)**
-- **Кортежи (`tuple`)**
-- **Замороженные множества (`frozenset`)**
+Exemple:
 
-Пример работы с неизменяемыми объектами:
+* **Numere (`int`, `float`, `complex`)**
+* **Șiruri (`str`)**
+* **Tuple (`tuple`)**
+* **Mulțimi înghețate (`frozenset`)**
+
+**Exemplu:**
+
 ```python
 s = "hello"
-# s[0] = "H"  # Ошибка! Нельзя изменить символ строки
+# s[0] = "H"  # Eroare! Nu se poate modifica un caracter din șir
 
-# При модификации строки создаётся новая строка
+# Modificarea șirului creează un șir nou
 s = s.upper()
 print(s)  # "HELLO"
 ```
 
 ---
 
-#### **Разница между изменяемыми и неизменяемыми объектами**  
+#### **Diferența între obiectele mutabile și imutabile**
 
-| Свойство                | Изменяемые объекты         | Неизменяемые объекты         |
-|-------------------------|---------------------------|------------------------------|
-| Возможность изменения   | Можно изменять содержимое | Нельзя изменять содержимое   |
-| Использование памяти    | Изменения происходят в том же объекте | Создаётся новый объект       |
-| Примеры                 | `list`, `dict`, `set`     | `int`, `str`, `tuple`, `frozenset` |
+| Proprietate               | Obiecte mutabile                    | Obiecte imutabile                  |
+| ------------------------- | ----------------------------------- | ---------------------------------- |
+| Posibilitatea modificării | Poate fi modificat conținutul       | Nu poate fi modificat conținutul   |
+| Utilizarea memoriei       | Modificările apar în același obiect | Se creează un obiect nou           |
+| Exemple                   | `list`, `dict`, `set`               | `int`, `str`, `tuple`, `frozenset` |
+
+---
+
+#### **De ce este important?**
+
+* **Obiectele imutabile** oferă stabilitate datelor și sunt utile în aplicații multithreaded.
+* **Obiectele mutabile** sunt convenabile pentru lucrul cu seturi mari de date unde este necesară modificarea conținutului.
+
+Înțelegerea mutabilității ajută la evitarea erorilor legate de modificări neintenționate ale datelor în Python.
 
 ---
 
-#### **Почему это важно?**  
-- **Неизменяемые объекты** обеспечивают стабильность данных. Они особенно полезны в многопоточных приложениях, где важно избегать неожиданных изменений.  
-- **Изменяемые объекты** удобны для работы с большими наборами данных, когда требуется изменять содержимое.  
+### 3. **Slice-uri (slicing)**
 
-Понимание изменяемости помогает избежать ошибок, связанных с непреднамеренными изменениями данных в Python.
+Slice-urile permit extragerea de subșiruri sau subliste dintr-un șir, listă sau alt obiect indexabil.
 
----
-### 3. **Срезы (slicing)**
-Позволяют извлекать подстроки или подсписки из строки, списка или другого индексируемого объекта.
-
-Синтаксис:
+**Sintaxă:**
 
 ```python
 sequence[start:end:step]
 ```
 
-- `start`: индекс начала среза (включительно).
-- `end`: индекс конца среза (не включительно).
-- `step`: шаг, с которым берутся элементы.
+* `start`: indexul de început al slice-ului (inclusiv).
+* `end`: indexul de sfârșit al slice-ului (exclusiv).
+* `step`: pasul cu care se iau elementele.
 
-Примеры:
+**Exemple:**
 
 ```python
 s = "Hello, World!"
-print(s[0:5])  # "Hello" — с 0 по 4 индекс
-print(s[7:])   # "World!" — с 7 до конца
-print(s[:5])   # "Hello" — с начала до 4 индекса
-print(s[::2])  # "Hoo ol!" — каждый второй символ
+print(s[0:5])  # "Hello" — de la indexul 0 la 4
+print(s[7:])   # "World!" — de la indexul 7 până la sfârșit
+print(s[:5])   # "Hello" — de la început până la indexul 4
+print(s[::2])  # "Hlo ol!" — fiecare al doilea caracter
 ```
 
-Также можно использовать отрицательные индексы для отсчета с конца:
+Se pot folosi și indexi negativi:
 
 ```python
-print(s[-6:-1])  # "World" — с конца, с 6 по 1 индексы
+print(s[-6:-1])  # "World" — de la sfârșit, de la indexul -6 la -2
 ```
+
 ---
-### 4. Строки (`str`) 
-Строки в Python представляют собой неизменяемую последовательность символов. Они часто используются для работы с текстовыми данными.
 
-#### Основные свойства строк:  
-- Неизменяемы (нельзя изменить символ в строке).
-- Поддерживают индексацию и срезы.
-- Могут содержать любые символы, включая пробелы и специальные знаки.
+### 4. Șiruri (`str`)
 
-#### Создание строк:
+Șirurile în Python sunt secvențe **imutabile** de caractere. Sunt folosite frecvent pentru procesarea datelor textuale.
+
+#### Proprietăți principale ale șirurilor:
+
+* Imutabile (nu poți modifica caracterele direct).
+* Suportă indexare și slicing.
+* Pot conține orice caractere, inclusiv spații și simboluri speciale.
+
+#### Crearea șirurilor:
+
 ```python
-s1 = "Привет, мир!"  # Двойные кавычки
-s2 = 'Python — мощный язык'  # Одинарные кавычки
-s3 = """Многострочная
-строка"""  # Тройные кавычки
+s1 = "Salut, lume!"          # ghilimele duble
+s2 = 'Python — un limbaj puternic'  # ghilimele simple
+s3 = """Șir multi-linie
+exemplu"""                 # ghilimele triple
 ```
 
-#### Методы строк:
-У строк  имеются различные методы, которые помогают нам работать с ними. Не имеет смысла заучивать наизусть все методы. Но если вы столкнулись с задачей, в которой необходимо поработать со строками, сначала обязательно проверьте, возможно, уже есть метод, который вам поможет:
+#### Metode utile pentru șiruri:
 
-- **Изменение регистра:**  
-  ```python
-  s = "Python"
-  print(s.upper())  # "PYTHON"
-  print(s.lower())  # "python"
-  ```
+* **Modificarea literelor:**
 
-- **Удаление символов:**\
-`strip([chars])` - удаляет из начала и конца строки указанные символы. Если символы не указаны, удаляются все пробельные символы:
-  ```python
-  s = "  Hello, world!  "
-  print(s.strip())  # "Hello, world!"
-  ```
+```python
+s = "Python"
+print(s.upper())  # "PYTHON"
+print(s.lower())  # "python"
+```
 
-- **Проверки:**  
-  ```python
-  s = "123"
-  print(s.isdigit())  # True
-  print(s.isalpha())  # False
-  ```
+* **Eliminarea spațiilor sau caracterelor:**
 
-- **Разделение и объединение:**  
-`split([separator[, maxsplit]])` - разбивает строку на список подстрок, разделенных разделителем `separator`. Необязательный параметр `maxsplit` задает максимальное количество разбиений.\
-`join(iterable)` - объединяет список строк в одну строку, разделяя их указанным разделителем.
-  ```python
-  s = "one,two,three"
-  print(s.split(","))  # ['one', 'two', 'three']
-  print("-".join(['one', 'two', 'three']))  # "one-two-three"
-  ```
+```python
+s = "  Hello, world!  "
+print(s.strip())  # "Hello, world!"
+```
 
-- **Поиск и замена:**  
-`replace(old, new[, count])` - заменяет все вхождения одной подстроки на другую. Необязательный параметр `count` задает максимальное количество замен:
-  ```python
-  s = "Python programming"
-  print(s.find("prog"))  # 7
-  print(s.replace("Python", "C++"))  # "C++ programming"
-  ```
-- **Подсчет числа вхождений:**  
-`count(substring[, start[, end]])` - возвращает количество вхождений подстроки в строку. Необязательные параметры `start` и `end` задают диапазон поиска:
+* **Verificări:**
+
+```python
+s = "123"
+print(s.isdigit())  # True
+print(s.isalpha())  # False
+```
+
+* **Împărțire și concatenare:**
+
+```python
+s = "one,two,three"
+print(s.split(","))                  # ['one', 'two', 'three']
+print("-".join(['one', 'two', 'three']))  # "one-two-three"
+```
+
+* **Căutare și înlocuire:**
+
+```python
+s = "Python programming"
+print(s.find("prog"))          # 7
+print(s.replace("Python", "C++"))  # "C++ programming"
+```
+
+* **Numărarea aparițiilor unui substring:**
 
 ```python
 string = "brown fox jumps over a lazy dog"
@@ -233,165 +251,122 @@ count = string.count("o")
 print(count)  # 4
 ```
 
-- **Получение длины строки:**  
-`len(string)` - возвращает количество символов в строке:
+* **Lungimea șirului:**
 
 ```python
 s = "Hello, World!"
 print(len(s))  # 13
 ```
 
-- **Удаление элементов из строки:**  
-`del` - используется для удаления элементов из коллекций, но не применяется напрямую к строкам, так как строки неизменяемы. Однако для удаления символов из строки можно использовать срезы:
+* **Ștergerea elementelor:**
+  `del` nu se aplică direct pe șiruri, dar putem folosi slicing:
 
 ```python
 s = "Hello, World!"
-s = s[:5] + s[7:]  # Удаляем символы с индекса 5 до 7
+s = s[:5] + s[7:]  # elimină caracterele de la indexul 5 la 6
 print(s)  # "Hello World!"
 ```
-- **Функция `print()`** используется для вывода данных на экран или в файл.\
-Синтаксис:
+
+* **Funcția `print()`** pentru afișare:
 
 ```python
-print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+print(1, 2, 3, 4)               # 1 2 3 4
+print(1, 2, 3, 4, sep=' - ')    # 1 - 2 - 3 - 4
+print(1, 2, 3, 4, sep=' - ', end='!')  # 1 - 2 - 3 - 4!
 ```
 
-- `*objects`: объекты для вывода.
-- `sep=' '`: разделитель между объектами (по умолчанию пробел).
-- `end='\n'`: символ в конце строки (по умолчанию новый строка).
-- `file`: файл для вывода (по умолчанию `sys.stdout` — экран).
-- `flush=False`: если True, поток очищается.
-
-Пример:
-```python
-print(1, 2, 3, 4)  # Выводит: 1 2 3 4
-print(1, 2, 3, 4, sep=' - ')  # Выводит: 1 - 2 - 3 - 4
-print(1, 2, 3, 4, sep=' - ', end='!')  # Выводит: 1 - 2 - 3 - 4!
-```
-- **Функция `input()`** позволяет получать данные от пользователя. Результат всегда строка.
-
-Пример:
+* **Funcția `input()`** pentru citirea datelor de la utilizator:
 
 ```python
 name = input('Enter your name: ')
 print("Your name is", name)
 
 nmbr = input('Enter a number: ')
-print(int(nmbr) + 5)  # Преобразуем строку в число
+print(int(nmbr) + 5)  # conversie la număr
 ```
-- **Повторение строки** в Python осуществляется с помощью оператора умножения (`*`), который позволяет повторить строку заданное количество раз.
 
-Пример:
+* **Repetarea șirurilor:**
 
 ```python
 s = "Hello"
-repeated = s * 3
-print(repeated)  # "HelloHelloHello"
+print(s * 3)   # "HelloHelloHello"
+print(s * -2)  # ""
+print(s * 0)   # ""
 ```
 
-Здесь строка `"Hello"` повторяется 3 раза.
-
-Можно использовать отрицательные числа, но в таком случае результат будет пустой строкой:
-
-```python
-s = "Hello"
-repeated = s * -2
-print(repeated)  # ""
-```
-
-Если умножить строку на ноль, результат будет пустая строка:
-
-```python
-s = "Hello"
-repeated = s * 0
-print(repeated)  # ""
-```
-
-- **Проверка наличия подстроки в строке:**  
-`if substring in string` - проверяет, содержится ли подстрока в строке. Возвращает `True`, если подстрока найдена, и `False` в противном случае:
+* **Verificarea prezenței unui substring:**
 
 ```python
 s = "Python programming"
 if "Python" in s:
-    print("Подстрока найдена")
-else:
-    print("Подстрока не найдена")
+    print("Substring găsit!")
 ```
 
-Также, при использовании `if substring in string` можно сразу выполнить действия, если подстрока присутствует:
+---
 
-```python
-s = "The quick brown fox"
-if "quick" in s:
-    print("Подстрока 'quick' найдена!")
-```
-### Форматирование строк в Python
+### Formatarea șirurilor în Python
 
-В Python существует несколько способов форматирования строк:
+#### 1. **F-strings (Python 3.6+)**
 
-#### **1. F-строки (Python 3.6+)**
-
-F-строки позволяют вставлять значения переменных или выражений прямо в строку, предваряя её буквой "f" и заключая выражения в фигурные скобки `{}`:
+Permite inserarea variabilelor sau expresiilor direct în șir:
 
 ```python
 name = "Alice"
 age = 25
 print(f"My name is {name} and I am {age} years old")
-```
-Результат:
-```
-My name is Alice and I am 25 years old
-```
+# My name is Alice and I am 25 years old
 
-Выражения также можно вставлять:
-```python
 x = 5
 print(f"The value of x squared is {x**2}")
+# The value of x squared is 25
 ```
-Результат:
-```
-The value of x squared is 25
-```
+---
 
-#### **2. Оператор %**
+#### **2. Operatorul %**
 
-Метод, похожий на C, используется реже, но всё ещё встречается в старых проектах:
+Metoda, asemănătoare cu cea din C, este folosită mai rar, dar încă poate fi întâlnită în proiecte vechi:
 
 ```python
 name = "Alice"
 age = 25
 print("My name is %s and I am %d years old" % (name, age))
 ```
-Результат:
+
+Rezultat:
+
 ```
 My name is Alice and I am 25 years old
 ```
 
-#### **3. Метод `format()`**
+#### **3. Metoda `format()`**
 
-Метод `format()` позволяет заменять placeholders в строке на переданные значения:
+Metoda `format()` permite înlocuirea placeholder-elor dintr-un șir cu valorile furnizate:
 
 ```python
-name = "Алексей"
+name = "Alexei"
 age = 30
-print("Меня зовут {}. Мне {} лет.".format(name, age))
-```
-Результат:
-```
-Меня зовут Алексей. Мне 30 лет.
+print("Mă numesc {}. Am {} ani.".format(name, age))
 ```
 
-Также можно использовать индексы и именованные аргументы:
+Rezultat:
+
+```
+Mă numesc Alexei. Am 30 ani.
+```
+
+De asemenea, se pot folosi indici și argumente numite:
 
 ```python
-print("Мне {1} лет. Меня зовут {0}.".format(name, age))
-print("Меня зовут {name}. Мне {age} лет.".format(name='Алексей', age=30))
+print("Am {1} ani. Mă numesc {0}.".format(name, age))
+print("Mă numesc {name}. Am {age} ani.".format(name='Alexei', age=30))
 ```
 
-F-строки предпочтительнее, так как они более читаемы и удобны.
+F-strings sunt preferate, deoarece sunt mai ușor de citit și mai convenabile.
 
+---
 
-#### Срезы:
+#### Slice-uri:
+
 ```python
 s = "Python"
 print(s[0])  # "P"
@@ -400,235 +375,281 @@ print(s[1:4])  # "yth"
 ```
 
 ---
-## Что такое коллекции в Python?
-Коллекции — это контейнеры, которые используются для хранения множества данных. В Python коллекциями являются структуры данных, которые позволяют хранить несколько элементов, упрощая работу с группами данных. Коллекции могут быть изменяемыми (mutable) или неизменяемыми (immutable), и каждый тип коллекции обладает своими особенностями.
-В Python есть четыре типа данных, называемых коллекциями:
 
-1. **Список (list)** — упорядоченная и изменяемая коллекция данных. Может содержать дубликаты элементов.
-   
-   Пример:
+## Ce sunt colecțiile în Python?
+
+Colecțiile sunt containere folosite pentru stocarea unui set de date. În Python, colecțiile sunt structuri de date care permit stocarea mai multor elemente, facilitând lucrul cu grupuri de date. Colecțiile pot fi **mutable** (modificabile) sau **immutable** (nemodificabile), iar fiecare tip de colecție are propriile caracteristici.
+
+În Python există patru tipuri de colecții principale:
+
+1. **Listă (list)** — colecție ordonată și modificabilă. Poate conține elemente duplicate.
+
+   Exemplu:
+
    ```python
    lst = [1, 2, 3, 2, 4]
    ```
-2. **Множество (set)** — неупорядоченная, неизменяемая коллекция (элементы неизменяемы, но можно добавлять и удалять). Не содержит повторяющихся элементов.
-   
-   Пример:
+
+2. **Mulțime (set)** — colecție neordonată, cu elemente unice. Elemente sunt nemodificabile, dar se pot adăuga și șterge. Nu conține duplicate.
+
+   Exemplu:
+
    ```python
    st = {1, 2, 3, 4}
    ```
 
-3. **Кортеж (tuple)** — упорядоченная и неизменяемая коллекция данных. Также позволяет дублировать элементы.
-   
-   Пример:
+3. **Tuplu (tuple)** — colecție ordonată și nemodificabilă. Permite duplicarea elementelor.
+
+   Exemplu:
+
    ```python
    tpl = (1, 2, 3, 2, 4)
    ```
 
-4. **Словарь (dict)** — упорядоченная (с Python 3.7) и изменяемая коллекция, хранящая пары "ключ-значение". Ключи не могут повторяться.
-   
-   Пример:
+4. **Dicționar (dict)** — colecție ordonată (din Python 3.7+) și modificabilă, care stochează perechi "cheie-valoare". Cheile nu se pot repeta.
+
+   Exemplu:
+
    ```python
    d = {"name": "Alice", "age": 25}
    ```
-# Остановимся более подробно на каждой :)
+
+# Să ne oprim mai detaliat asupra fiecărei colecții :)
 
 ---
-### 1. **Списки (`list`)**  
-Списки в Python представляют собой изменяемые последовательности объектов.
 
-#### Основные свойства списков:  
-- Могут содержать объекты разных типов.  
-- Динамическая длина.  
-- Поддерживают вложенность.  
+### 1. **Liste (`list`)**
 
-#### Создание списков:
+Listele în Python reprezintă secvențe **modificabile** de obiecte.
+
+#### Proprietăți principale:
+
+* Pot conține obiecte de tipuri diferite.
+* Lungime dinamică.
+* Suportă listă imbricată (nested lists).
+
+#### Crearea listelor:
+
 ```python
 lst1 = [1, 2, 3, 4]
 lst2 = ["a", "b", "c"]
-lst3 = [1, "Python", [2, 3, 4]]  # Вложенный список
-lst4 = list() # пустой список
+lst3 = [1, "Python", [2, 3, 4]]  # Listă imbricată
+lst4 = list() # listă goală
 ```
 
-#### Основные операции:
-- **Добавление элементов:**  
-  ```python
-  lst = [1, 2, 3]
-  lst.append(4)  # Добавляет элементы в конец списка: [1, 2, 3, 4]
-  lst.insert(1, 10)  # Добавляет элементы на указанную позицию(первый параметр функции): [1, 10, 2, 3, 4]
-  ```
+#### Operații principale:
 
-- **Удаление элементов:**  
-  ```python
-  lst = [1, 2, 3, 4]
-  lst.pop()  # Удаляет последний элемент: [1, 2, 3]
-  lst.remove(2)  # Удаляет первый найденный элемент: [1, 3]
-  my_list.clear() # Удаляет все элементы из списка: [] 
-  ```
+* **Adăugarea elementelor:**
 
-- **Объединение и повторение:**  
-  ```python
-  lst1 = [1, 2]
-  lst2 = [3, 4]
-  print(lst1 + lst2)  # [1, 2, 3, 4]
-  print(lst1 * 2)  # [1, 2, 1, 2]
-  ```
+```python
+lst = [1, 2, 3]
+lst.append(4)  # Adaugă la sfârșit: [1, 2, 3, 4]
+lst.insert(1, 10)  # Adaugă la poziția specificată: [1, 10, 2, 3, 4]
+```
 
-- **Сортировка:**  
-  ```python
-  lst = [3, 1, 4, 2]
-  lst.sort()  # [1, 2, 3, 4]
-  lst.reverse()  # [4, 3, 2, 1]
-  # тоже самое что и reverse
-  lst.sort(reverse=True) # [4, 3, 2, 1]
-  ```
-- **Возвращает копию списка:**  
+* **Ștergerea elementelor:**
+
+```python
+lst = [1, 2, 3, 4]
+lst.pop()      # Șterge ultimul element: [1, 2, 3]
+lst.remove(2)  # Șterge prima apariție: [1, 3]
+my_list.clear() # Șterge toate elementele: []
+```
+
+* **Concatenare și repetare:**
+
+```python
+lst1 = [1, 2]
+lst2 = [3, 4]
+print(lst1 + lst2)  # [1, 2, 3, 4]
+print(lst1 * 2)     # [1, 2, 1, 2]
+```
+
+* **Sortare:**
+
+```python
+lst = [3, 1, 4, 2]
+lst.sort()           # [1, 2, 3, 4]
+lst.reverse()        # [4, 3, 2, 1]
+lst.sort(reverse=True) # [4, 3, 2, 1]
+```
+
+* **Returnează o copie a listei:**
+
 ```python
 my_list = [1, 2, 3]
 new_list = my_list.copy()
 print(new_list)  # [1, 2, 3]
 ```
-- **Возвращает количество вхождений элемента в список:**  
+
+* **Numărul de apariții ale unui element în listă:**
+
 ```python
 my_list = [1, 2, 2, 3, 2]
 count = my_list.count(2)
 print(count)  # 3
-
 ```
-- **Добавляет элементы другого итерируемого объекта в конец списка:**  
+
+* **Returnează indexul primului element egal cu item într-un interval specificat:**
+
 ```python
 my_list = [1, 2, 2, 3, 2]
 index = my_list.index(2, 2, 5)
 print(index)  # 2
 ```
-- **Возвращает индекс первого элемента, равного item, в указанном диапазоне:**  
+
+* **Adăugarea elementelor unui alt obiect iterabil la sfârșitul listei:**
+
 ```python
 my_list = [1, 2, 3]
 my_list.extend([4, 5])
 print(my_list)  # [1, 2, 3, 4, 5]
 ```
-- **Применение заданной функции к каждому элементу:**
-`map()` — применяет заданную функцию к каждому элементу итерируемого объекта (список, строка, и т.д.), возвращая итератор. Часто используется для преобразования элементов в последовательности:
 
-   ```python
-   my_list = [1, 2, 3, 4, 5]
-   result = map(lambda x: x ** 2, my_list)
-   print(list(result))  # [1, 4, 9, 16, 25]
+* **Aplicarea unei funcții asupra fiecărui element:**
+  `map()` aplică o funcție asupra fiecărui element dintr-un obiect iterabil și returnează un iterator:
 
-   # Преобразование строк в числа
-   my_str_list = ['1', '2', '3']
-   result = map(int, my_str_list)
-   print(list(result))  # [1, 2, 3]
-   ```
- Функция `map()` применяет функцию (в примере `lambda x: x ** 2`) к каждому элементу в `my_list`, создавая новый итерируемый объект с результатами.
-#### Срезы:
 ```python
-lst = [0, 1, 2, 3, 4]
-print(lst[:3])  # [0, 1, 2]
-print(lst[1::2])  # [1, 3]
+my_list = [1, 2, 3, 4, 5]
+result = map(lambda x: x ** 2, my_list)
+print(list(result))  # [1, 4, 9, 16, 25]
+
+# Conversia unui șir de string-uri în numere
+my_str_list = ['1', '2', '3']
+result = map(int, my_str_list)
+print(list(result))  # [1, 2, 3]
 ```
 
+Funcția `map()` aplică funcția specificată (în exemplu `lambda x: x ** 2`) fiecărui element din `my_list`, creând un nou obiect iterabil cu rezultatele.
+
+#### Slice-uri în liste:
+
+```python
+lst = [0, 1, 2, 3, 4]
+print(lst[:3])   # [0, 1, 2]
+print(lst[1::2]) # [1, 3]
+```
 ---
 
-### 3. **Множества (`set`)**  
-Множества в Python представляют собой коллекции уникальных элементов, которые не имеют фиксированного порядка.
+### 3. **Mulțimi (`set`)**
 
-#### Основные свойства множеств:  
-- Элементы уникальны.  
-- Неизменяемые типы данных (строки, числа, кортежи) могут быть элементами множества.  
-- Поддерживаются математические операции: объединение, пересечение, разность.
+Mulțimile în Python reprezintă colecții de elemente unice, care nu au o ordine fixă.
 
-#### Создание множеств:
+#### Proprietăți principale ale mulțimilor:
+
+* Elementele sunt unice.
+* Tipurile de date **immutable** (stringuri, numere, tuple) pot fi elemente ale mulțimii.
+* Sunt suportate operații matematice: reuniune, intersecție, diferență.
+
+#### Crearea mulțimilor:
+
 ```python
 set1 = {1, 2, 3, 4}
 set2 = set([1, 2, 2, 3])  # {1, 2, 3}
-set3 = set()  # Пустое множество
+set3 = set()  # Mulțime goală
 ```
-В Python, значения `True` и `1` (аналогично `False` и `0`) считаются эквивалентными при работе с множествами, так как множества не могут содержать дублирующиеся элементы. Когда вы добавляете в множество такие значения, интерпретатор воспринимает их как одинаковые и оставляет только одно из них.
 
-Рассмотрим пример:
+În Python, valorile `True` și `1` (la fel `False` și `0`) sunt considerate echivalente în mulțimi, deoarece mulțimile nu pot conține elemente duplicate. Dacă adaugi astfel de valori, interpretatorul le consideră identice și păstrează doar unul.
+
+Exemplu:
 
 ```python
 my_set = {0, "tulip", "rose", "iris", True, 1, 77, False, True}
 print(my_set, len(my_set))
 ```
 
-Результат будет следующим:
+Rezultat:
 
 ```
-{0, 'rose', 'iris', True, 'tulip', 77} 5
+{0, 'rose', 'iris', True, 'tulip', 77} 6
 ```
 
-- В множестве `my_set` были представлены как `True`, так и `1`, но интерпретатор оставил только одно из них, так как они считаются одинаковыми.
-- Также `False` и `0` тоже считаются эквивалентными, и в множестве остался только `0`.
-- Дубликаты элементов `True` и `1` были удалены.
+* În `my_set`, au fost incluse atât `True` cât și `1`, dar interpretatorul a păstrat doar unul.
+* De asemenea, `False` și `0` sunt considerate echivalente, și în mulțime a rămas doar `0`.
+* Duplicatele `True` și `1` au fost eliminate.
 
-Таким образом, множества не допускают дублирования элементов, и даже если два элемента равны по значению (например, `True` и `1`), интерпретатор сохранит только один из них.
-Основное преимущество использования множеств, по сравнению
-со списками, это использование специального,
-оптимизированного метода проверки если какой-то элемент
-принадлежит или нет множеству
-#### Основные операции:
-- **Добавление и удаление элементов:**  
-  ```python
-  s = {1, 2, 3}
-  s.add(4)  # {1, 2, 3, 4}
-  s.discard(2)  #  удаляет элемент, если он присутствует, иначе ничего не происходит: {1, 3, 4}
-  s.remove(3) #  удаляет элемент, если он присутствует, иначе вызывает ошибку KeyError {1, 4}
-  s.remove(5)  # Ошибка KeyError
-  s.clear()  # {}
-  ```
-- **Удаляет случайный элемент:**  
-Метод **`pop()`** удаляет случайный элемент из множества и возвращает его. Это полезно, когда нужно удалить элемент, но вы не заинтересованы в его конкретном значении, или хотите просто забрать элемент и работать с ним. Если множество пустое, то метод вызывает ошибку `KeyError`.
+Astfel, mulțimile nu permit duplicate, iar dacă două elemente sunt echivalente (ex. `True` și `1`), se păstrează doar unul.
 
-Пример использования метода **`pop()`**:
+Un avantaj principal al utilizării mulțimilor față de liste este verificarea rapidă dacă un element **aparține** mulțimii.
+
+---
+
+#### Operații principale:
+
+* **Adăugarea și ștergerea elementelor:**
+
+```python
+s = {1, 2, 3}
+s.add(4)       # {1, 2, 3, 4}
+s.discard(2)   # Elimină elementul dacă există, altfel nu face nimic: {1, 3, 4}
+s.remove(3)    # Elimină elementul dacă există, altfel generează KeyError: {1, 4}
+# s.remove(5)  # KeyError
+s.clear()      # {}
+```
+
+* **Ștergerea unui element aleator:**
+  Metoda **`pop()`** elimină un element aleator și îl returnează. Este utilă dacă vrei să elimini un element fără să te intereseze care este sau dacă vrei doar să-l preiei și să lucrezi cu el. Dacă mulțimea este goală, se generează `KeyError`.
+
+Exemplu:
 
 ```python
 my_set = {1, 2, 3, 4, 5}
 removed_item = my_set.pop()
-print(f"Удаленный элемент: {removed_item}") # Удаленный элемент: 1
-print(f"Множество после удаления элемента: {my_set}") # Множество после удаления элемента: {2, 3, 4, 5}
+print(f"Element eliminat: {removed_item}")
+print(f"Mulțimea după eliminare: {my_set}")
 ```
 
-**Примечание:** Поскольку множества в Python неупорядочены, **`pop()`** удаляет случайный элемент, и каждый раз результат может быть разным.
+**Notă:** Deoarece mulțimile nu sunt ordonate, rezultatul lui `pop()` poate fi diferit de fiecare dată.
 
+---
 
-- **Объединение и пересечение:**  
-  ```python
-  s1 = {1, 2, 3}
-  s2 = {3, 4, 5}
-  print(s1 | s2)  # {1, 2, 3, 4, 5} (объединение)
-  c = a.union(b) # {1, 2, 3, 4, 5} (объединение)
-  print(s1 & s2)  # {3} (пересечение)
-  intersection_set = s1.intersection(s2 # {3} (пересечение)
-  ```
+* **Reuniune și intersecție:**
 
-- **Разность и симметричная разность:**  
-  ```python
-  print(s1 - s2)  # {1, 2} (разность)
-  diff_s1_s2 = s1.difference(s2) # {1, 2}
-  print(s1 ^ s2)  # {1, 2, 4, 5} (симметричная разность)
-  ```
-- **Возвращает копию множества:**  
+```python
+s1 = {1, 2, 3}
+s2 = {3, 4, 5}
+print(s1 | s2)           # {1, 2, 3, 4, 5} (reuniune)
+c = s1.union(s2)         # {1, 2, 3, 4, 5} (reuniune)
+print(s1 & s2)           # {3} (intersecție)
+intersection_set = s1.intersection(s2)  # {3} (intersecție)
+```
+
+* **Diferență și diferență simetrică:**
+
+```python
+print(s1 - s2)           # {1, 2} (diferență)
+diff_s1_s2 = s1.difference(s2)  # {1, 2}
+print(s1 ^ s2)           # {1, 2, 4, 5} (diferență simetrică)
+```
+
+* **Returnează o copie a mulțimii:**
+
 ```python
 fruits = {"apple", "banana", "cherry"}
 new_fruits = fruits.copy()
 print(new_fruits)  # {'banana', 'cherry', 'apple'}
 ```
-- **Проверяет, не имеют ли два множества общих элементов:**  
+
+* **Verifică dacă două mulțimi nu au elemente comune:**
+
 ```python
 set1 = {1, 2, 3}
 set2 = {4, 5, 6}
 disjoint_sets = set1.isdisjoint(set2)
 print(disjoint_sets)  # True
 ```
-- **Проверяет, является ли одно множество подмножеством другого:**  
+
+* **Verifică dacă o mulțime este subset a alteia:**
+
 ```python
 set1 = {1, 2, 3, 4, 5}
 set2 = {1, 2, 3}
 result = set2.issubset(set1)
 print(result)  # True
 ```
-#### Проверки:
+
+#### Verificări:
+
 ```python
 s = {1, 2, 3}
 print(2 in s)  # True
@@ -637,36 +658,38 @@ print(5 in s)  # False
 
 ---
 
-**FROZENSET** — это встроенный тип данных в Python, представляющий неизменяемое множество. В отличие от обычных множеств (`set`), элементы **`frozenset`** нельзя изменять после его создания. Он поддерживает все методы множества, за исключением тех, которые изменяют его (например, `add()`, `remove()` и т. д.).
+**FROZENSET** — tip de date incorporat în Python, reprezentând o mulțime **nemodificabilă**. Spre deosebire de `set`, elementele din `frozenset` nu pot fi schimbate după creare. Suportă toate metodele mulțimii, cu excepția celor care modifică obiectul (`add()`, `remove()`, etc.).
 
-### Особенности:
-- Неизменяемость (неподвластен изменениям после создания).
-- Поддерживает операции с множествами, такие как объединение, пересечение, разность и т. д.
-- Может быть использован в качестве ключа для словарей, в отличие от обычных множеств.
+### Caracteristici:
 
-### Пример использования:
+* Nemodificabil după creare.
+* Suportă operații cu mulțimi: reuniune, intersecție, diferență etc.
+* Poate fi folosit ca **cheie în dicționare**, spre deosebire de mulțimile obișnuite.
+
+### Exemplu:
 
 ```python
-# Создание frozenset
+# Creare frozenset
 frozen_set = frozenset([1, 2, 3, 4, 5])
-print(frozen_set)  # выведет frozenset({1, 2, 3, 4, 5})
+print(frozen_set)  # frozenset({1, 2, 3, 4, 5})
 
-# Попытка изменить frozenset вызовет ошибку
-# frozen_set.add(6)  # Ошибка: 'frozenset' object has no attribute 'add'
+# Încercarea de a modifica frozenset va genera eroare
+# frozen_set.add(6)  # Eroare: 'frozenset' object has no attribute 'add'
 
-# Можно использовать frozenset в качестве ключа в словаре
-my_dict = {frozen_set: "This is a frozen set"}
+# Folosirea frozenset ca cheie în dicționar
+my_dict = {frozen_set: "Acesta este un frozenset"}
 print(my_dict)
 ```
 
-### Основные методы **frozenset**:
-- **union()**: объединение множеств.
-- **intersection()**: пересечение множеств.
-- **difference()**: разность множеств.
-- **issubset()**: проверка, является ли множество подмножеством.
-- **issuperset()**: проверка, является ли множество надмножеством.
+### Metode principale **frozenset**:
 
-### Пример работы с методами:
+* **union()**: reuniune
+* **intersection()**: intersecție
+* **difference()**: diferență
+* **issubset()**: verifică dacă este subset
+* **issuperset()**: verifică dacă este superset
+
+### Exemplu de utilizare a metodelor:
 
 ```python
 fs1 = frozenset([1, 2, 3])
@@ -677,73 +700,82 @@ print(fs1.intersection(fs2)) # frozenset({3})
 print(fs1.difference(fs2))   # frozenset({1, 2})
 ```
 
-**frozenset** полезен, когда вам нужно использовать неизменяемые коллекции элементов, например, в качестве ключей словаря или для безопасной передачи данных в многозадачных приложениях.
+---
 
-### Полезные функции
-Также давайте посмотрим на различные функции, которые помогают нам работать со списками и множествами:
+**frozenset** este util atunci când ai nevoie de colecții imuabile de elemente, de exemplu, pentru a fi folosite ca **chei în dicționare** sau pentru a transmite date în siguranță în aplicații multitasking.
 
-1. **`len()`** — возвращает количество элементов в последовательности (списке, множестве и т.д.):
-   ```python
-   my_list = [1, 2, 3, 4, 5]
-   print(len(my_list))  # 5
+### Funcții utile
 
-   my_set = {1, 1, 2, 2}
-   print(len(my_set))  # 2
-   ```
+Să vedem câteva funcții care ne ajută să lucrăm cu listele și mulțimile:
 
-2. **`max()`** — возвращает максимальное значение из последовательности:
-   ```python
-   my_list = [5, 2, 8, 1, 9]
-   print(max(my_list))  # 9
+1. **`len()`** — returnează numărul de elemente dintr-o secvență (listă, mulțime etc.):
 
-   my_set = {5, 2, 8, 1, 9}
-   print(max(my_set))  # 9
-   ```
+```python
+my_list = [1, 2, 3, 4, 5]
+print(len(my_list))  # 5
 
-3. **`min()`** — возвращает минимальное значение из последовательности:
-   ```python
-   my_list = [5, 2, 8, 1, 9]
-   print(min(my_list))  # 1
+my_set = {1, 1, 2, 2}
+print(len(my_set))  # 2
+```
 
-   my_set = {5, 2, 8, 1, 9}
-   print(min(my_set))  # 1
-   ```
+2. **`max()`** — returnează valoarea maximă dintr-o secvență:
 
-4. **`sorted()`** — сортирует последовательность и возвращает новый отсортированный список. Можно использовать параметр `reverse=True` для сортировки по убыванию:
-   ```python
-   my_list = [5, 2, 8, 1, 9]
-   sorted_list = sorted(my_list)
-   print(sorted_list)  # [1, 2, 5, 8, 9]
+```python
+my_list = [5, 2, 8, 1, 9]
+print(max(my_list))  # 9
 
-   sorted_list_descending = sorted(my_list, reverse=True)
-   print(sorted_list_descending)  # [9, 8, 5, 2, 1]
-   ```
+my_set = {5, 2, 8, 1, 9}
+print(max(my_set))  # 9
+```
 
-   Когда сортируешь множество, результатом будет список:
-   ```python
-   my_set = {1, 1, 2, 2}
-   print(sorted(my_set))  # [1, 2]
-   ```
-   Вот дополнительные полезные функции:
+3. **`min()`** — returnează valoarea minimă dintr-o secvență:
 
-5. **`sum()`** — возвращает сумму всех элементов в последовательности. Работает с числами:
+```python
+my_list = [5, 2, 8, 1, 9]
+print(min(my_list))  # 1
 
-   ```python
-   my_list = [1, 2, 3, 4, 5]
-   print(sum(my_list))  # 15
+my_set = {5, 2, 8, 1, 9}
+print(min(my_set))  # 1
+```
 
-   my_set = {1, 2, 3, 4, 5}
-   print(sum(my_set))  # 15
-   ```
+4. **`sorted()`** — sortează o secvență și returnează o listă nouă, sortată. Poți folosi parametrul `reverse=True` pentru sortare descrescătoare:
 
+```python
+my_list = [5, 2, 8, 1, 9]
+sorted_list = sorted(my_list)
+print(sorted_list)  # [1, 2, 5, 8, 9]
 
-### Итог: Сравнение строк, списков и множеств  
-| Свойство        | Строки (`str`)    | Списки (`list`) | Множества (`set`) |
-|------------------|------------------|------------------|-------------------|
-| Изменяемость    | Нет              | Да               | Да               |
-| Уникальность    | Нет              | Нет              | Да               |
-| Индексация      | Да               | Да               | Нет              |
-| Поддержка срезов| Да               | Да               | Нет              |
-| Использование   | Текстовые данные | Любые данные     | Уникальные данные|
+sorted_list_descending = sorted(my_list, reverse=True)
+print(sorted_list_descending)  # [9, 8, 5, 2, 1]
+```
 
-Эти структуры данных покрывают широкий спектр задач, предоставляя инструменты для работы с текстами, последовательностями и коллекциями уникальных элементов.
+Dacă sortezi o mulțime, rezultatul va fi o **listă**:
+
+```python
+my_set = {1, 1, 2, 2}
+print(sorted(my_set))  # [1, 2]
+```
+
+5. **`sum()`** — returnează suma tuturor elementelor din secvență. Funcționează cu numere:
+
+```python
+my_list = [1, 2, 3, 4, 5]
+print(sum(my_list))  # 15
+
+my_set = {1, 2, 3, 4, 5}
+print(sum(my_set))  # 15
+```
+
+---
+
+### Concluzie: Compararea stringurilor, listelor și mulțimilor
+
+| Proprietate           | Stringuri (`str`) | Liste (`list`)    | Mulțimi (`set`) |
+| --------------------- | ----------------- | ----------------- | --------------- |
+| Mutabilitate          | Nu                | Da                | Da              |
+| Unicitate             | Nu                | Nu                | Da              |
+| Indexare              | Da                | Da                | Nu              |
+| Suport pentru slicing | Da                | Da                | Nu              |
+| Utilizare             | Date textuale     | Orice tip de date | Date unice      |
+
+Aceste structuri de date acoperă o gamă largă de sarcini, oferind instrumente pentru lucrul cu texte, secvențe și colecții de elemente unice.
