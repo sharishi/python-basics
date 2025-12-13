@@ -1,7 +1,3 @@
-Конечно! Вот перевод вашей лекции на румынский язык:
-
----
-
 # Lecția 1: Introducere în Python
 
 ### 1. De ce Python?
@@ -113,8 +109,6 @@ Astfel, limbajele interpretate oferă flexibilitate și confort în dezvoltare, 
    ```
 
    Ar trebui să vedeți versiunea Python, de exemplu `Python 3.10.5`. Aceasta confirmă că Python este instalat și gata de utilizare.
-Вот перевод вашего текста на румынский язык:
-
 ---
 
 5. **Instalarea unui IDE sau editor de cod**
@@ -245,9 +239,8 @@ print(nmbr2)  # 77.5
 * Operatorul de atribuire este simbolul egal (`=`).
 * **Numele variabilelor sunt case-sensitive** (`age` și `Age` sunt variabile diferite) și **nu trebuie să înceapă cu cifre** (trebuie să înceapă cu literă sau underscore `_`), dar pot conține cifre în interior.
 
-Вот перевод вашего текста на румынский язык:
-
 ---
+
 ### 9. Tipurile de bază de date în Python
 
 Python este un limbaj cu **tipizare dinamică**, unde tipul unei variabile este determinat automat în momentul atribuirii valorii. Python dispune atât de tipuri de bază, cât și de structuri de date mai complexe, care permit lucrul eficient cu diferite seturi de date.

@@ -1,25 +1,26 @@
-# Задание для студентов заочного отделения (IAFR2403)
+# Sarcină pentru studenții învățământului la distanță (IAFR2403)
 
-Для допуска к экзамену студенту необходимо получить **4 оценки**:
+Pentru a fi admis la examen, studentul trebuie să obțină **4 note**:
 
-- $MC$ — оценка за лабораторные работы
-- $MI$ — оценка за индивидуальную работу
-- $MA_1$ — оценка за первую аттестацию
-- $MA_2$ — оценка за вторую аттестацию
+* $MC$ — nota pentru lucrările de laborator
+* $MI$ — nota pentru lucrarea individuală
+* $MA_1$ — nota pentru prima evaluare
+* $MA_2$ — nota pentru a doua evaluare
 
-**Оценка за семестр** вычисляется по формуле:
+**Nota pentru semestru** se calculează după formula:
 
 $$MS = \frac{MC + MI + MA_1 + MA_2}{2}$$
 
-**Общая оценка** за курс вычисляется по формуле:
+**Nota finală** pentru curs se calculează după formula:
 
 $$MG = \frac{MS + E}{2}$$
 
-## Задание для студентов
+## Sarcini pentru studenți
 
-| №   | Оценка | Задание                                                                | Срок сдачи                                                       |
-| --- | ------ | ---------------------------------------------------------------------- |------------------------------------------------------------------|
-| 1   | $MC$   | Выполнение лабораторных работ: **L1**, **L2**, **L3**, **L4**| - **L1**, **L2**, **L3** до 24.12.2024<br>- **L4** до 19.05.2025 |
-| 2   | $MI$   | Выполнение индивидуальной работы **LI**                                | 25.05.2025                                                       |
-| 3   | $MA_1$  | Аттестация на Moodle **A1**                                            | 01.02.2025                                                       |
-| 4   | $MA_2$  | Письменная аттестация в университете                                   | Июнь 2025                                                        |
+| Nr. | Notă   | Sarcină                                                            | Termen limită                                                              |
+| --- | ------ | ------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| 1   | $MC$   | Realizarea lucrărilor de laborator: **L1**, **L2**, **L3**, **L4** | - **L1**, **L2**, **L3** până la 24.12.2024<br>- **L4** până la 19.05.2025 |
+| 2   | $MI$   | Realizarea lucrării individuale **LI**                             | 25.05.2025                                                                 |
+| 3   | $MA_1$ | Evaluarea pe Moodle **A1**                                         | 01.02.2025                                                                 |
+| 4   | $MA_2$ | Evaluarea scrisă la universitate                                   | Iunie 2025                                                                 |
+
