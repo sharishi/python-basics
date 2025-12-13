@@ -1,4 +1,4 @@
-# Sarcină pentru studenții învățământului la distanță (IAFR2403)
+# Sarcină pentru studenții învățământului FR (IAFR2501, IAFR2502)
 
 Pentru a fi admis la examen, studentul trebuie să obțină **4 note**:
 
@@ -17,10 +17,10 @@ $$MG = \frac{MS + E}{2}$$
 
 ## Sarcini pentru studenți
 
-| Nr. | Notă   | Sarcină                                                            | Termen limită                                                              |
-| --- | ------ | ------------------------------------------------------------------ | -------------------------------------------------------------------------- |
-| 1   | $MC$   | Realizarea lucrărilor de laborator: **L1**, **L2**, **L3**, **L4** | - **L1**, **L2**, **L3** până la 24.12.2024<br>- **L4** până la 19.05.2025 |
-| 2   | $MI$   | Realizarea lucrării individuale **LI**                             | 25.05.2025                                                                 |
-| 3   | $MA_1$ | Evaluarea pe Moodle **A1**                                         | 01.02.2025                                                                 |
-| 4   | $MA_2$ | Evaluarea scrisă la universitate                                   | Iunie 2025                                                                 |
+| Nr. | Notă   | Sarcină                                                            | Termen limită                    |
+| --- | ------ | ------------------------------------------------------------------ |----------------------------------|
+| 1   | $MC$   | Realizarea lucrărilor de laborator: **L1**, **L2**, **L3**, **L4** | - **L1 - L6** până la 19.05.2025 |
+| 2   | $MI$   | Realizarea lucrării individuale **LI**                             | 01.03.2025                       |
+| 3   | $MA_1$ | Evaluarea pe Moodle **A1**                                         | 10.03.2025                       |
+| 4   | $MA_2$ | Evaluarea scrisă la universitate                                   | Iunie 2025                       |
 
