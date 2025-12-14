@@ -17,10 +17,10 @@ $$MG = \frac{MS + E}{2}$$
 
 ## Sarcini pentru studenți
 
-| Nr. | Notă   | Sarcină                                                            | Termen limită                    |
-| --- | ------ | ------------------------------------------------------------------ |----------------------------------|
-| 1   | $MC$   | Realizarea lucrărilor de laborator: **L1**, **L2**, **L3**, **L4** | - **L1 - L6** până la 19.05.2025 |
-| 2   | $MI$   | Realizarea lucrării individuale **LI**                             | 01.03.2025                       |
-| 3   | $MA_1$ | Evaluarea pe Moodle **A1**                                         | 10.03.2025                       |
-| 4   | $MA_2$ | Evaluarea scrisă la universitate                                   | Iunie 2025                       |
+| Nr. | Notă   | Sarcină                                                            | Termen limită |
+| --- | ------ | ------------------------------------------------------------------ |---------------|
+| 1   | $MC$   | Realizarea lucrărilor de laborator: **L1 - L6** | 15.05.2026    |
+| 2   | $MI$   | Realizarea lucrării individuale **LI**                             | 15.03.2026    |
+| 3   | $MA_1$ | Evaluarea pe Moodle **A1**                                         | 15.02.2026    |
+| 4   | $MA_2$ | Evaluarea scrisă la universitate                                   | Iunie 2026    |
 
