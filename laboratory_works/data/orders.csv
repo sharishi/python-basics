@@ -1,0 +1,19 @@
+order_id,order_date,customer_id,category,product,unit_price,quantity,discount,status,country
+1001,05-01-2025 10:30,501,Electronics,Wireless Mouse,25.99,2,0.1,Completed,Germany
+1002,06-01-2025 14:15,502,Books,Python Programming,39.5,1,0,Completed,France
+1003,07-01-2025 09:45,503,Clothing,T-Shirt,15,3,0.2,Completed,Italy
+1004,08-01-2025 16:20,504,Electronics,USB-C Charger,18.75,1,0.05,Returned,Spain
+1005,09-01-2025 11:10,505,Books,Data Science Basics,45,2,0.15,Completed,Germany
+1006,10-01-2025 13:00,506,Clothing,Jeans,60,1,0.1,Completed,France
+1007,11-01-2025 17:40,507,Electronics,Headphones,89.99,1,0.25,Canceled,Italy
+1008,12-01-2025 08:55,508,Books,Machine Learning Guide,55,1,0,Completed,Spain
+1009,13-01-2025 19:30,509,Clothing,Jacket,120,1,0.3,Completed,Germany
+1010,14-01-2025 12:25,510,Electronics,Smartphone Case,19.99,2,0.05,Completed,France
+1011,15-01-2025 15:10,511,Books,Algorithms Explained,49.9,1,0.1,Returned,Italy
+1012,16-01-2025 09:00,512,Clothing,Sneakers,85,1,0.2,Completed,Spain
+1013,17-01-2025 18:45,513,Electronics,Bluetooth Speaker,70,1,0.15,Completed,Germany
+1014,18-01-2025 11:35,514,Books,Web Development,42,2,0,Completed,France
+1015,19-01-2025 14:50,515,Clothing,Hoodie,45,2,0.1,Completed,Italy
+1016,2025-01-20 10:00,516,Electronics,Keyboard,0,1,0.1,Completed,Germany
+1017,2025-01-21 12:00,517,Books,AI Basics,30,-2,0.1,Completed,France
+1018,2025-01-22 13:30,518,Clothing,Cap,20,1,0.7,Completed,Italy
